@@ -1,246 +1,254 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fahim Ahammad Mazumder | Official</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --theme-color: #ff9100; 
-            --text-color: #ffffff;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fahim Ahammad Mazumder | Official</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><style>
+:root{
+    --primary:#ff9100;
+    --bg:#0a0a0a;
+    --glass:rgba(255,255,255,0.06);
+    --text:#ffffff;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+*{margin:0;padding:0;box-sizing:border-box}
 
-        body {
-            background: #000 url('IMG_20260127_173130.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: var(--text-color);
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.4;
-        }
+body{
+    font-family:'Poppins',sans-serif;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,145,0,0.15), transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.05), transparent 40%),
+        linear-gradient(135deg,#000000,#0d0d0d,#050505);
+    color:var(--text);
+    overflow-x:hidden;
+}
 
-        /* --- Header: Short & Compact --- */
-        .header-nav {
-            position: fixed;
-            top: 8px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
-            display: flex;
-            gap: 4px;
-            width: 98%;
-            justify-content: center;
-        }
+/* floating glow blobs */
+body::before, body::after{
+    content:"";
+    position:fixed;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    filter:blur(120px);
+    z-index:-1;
+}
 
-        .mini-btn {
-            padding: 4px 8px;
-            background: rgba(0, 0, 0, 0.8);
-            border: 1px solid var(--theme-color);
-            border-radius: 4px;
-            color: var(--theme-color);
-            text-decoration: none;
-            font-size: 9px;
-            font-weight: bold;
-            white-space: nowrap;
-        }
+body::before{
+    background:rgba(255,145,0,0.25);
+    top:10%;
+    left:5%;
+}
 
-        .hero {
-            height: 20vh; /* আরও ছোট করা হয়েছে */
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            align-items: center;
-            padding-bottom: 10px;
-        }
+body::after{
+    background:rgba(255,255,255,0.08);
+    bottom:10%;
+    right:5%;
+}
 
-        .hero h1 {
-            font-size: 1.8rem;
-            font-weight: 900;
-            background: linear-gradient(to bottom, #fff, var(--theme-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+/* NAV */
+nav{
+    position:fixed;
+    top:15px;
+    left:50%;
+    transform:translateX(-50%);
+    backdrop-filter:blur(10px);
+    background:var(--glass);
+    padding:8px 15px;
+    border-radius:30px;
+    display:flex;
+    gap:10px;
+    z-index:999;
+    border:1px solid rgba(255,255,255,0.08);
+}
 
-        /* --- Profile Card: Small & Tight --- */
-        .profile-card {
-            background: rgba(10, 10, 10, 0.9);
-            padding: 15px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 145, 0, 0.2);
-            max-width: 90%;
-            width: 380px;
-            margin: 0 auto 20px auto;
-            text-align: center;
-        }
+nav a{
+    color:#fff;
+    font-size:12px;
+    text-decoration:none;
+    padding:6px 10px;
+    border-radius:20px;
+    transition:0.3s;
+}
 
-        .inline-logo {
-            width: 60px; height: 60px;
-            border-radius: 50%;
-            border: 2px solid var(--theme-color);
-            margin-bottom: 10px;
-            object-fit: cover;
-        }
+nav a:hover{
+    background:var(--primary);
+    color:#000;
+}
 
-        .verified-name { font-size: 1.2rem; font-weight: 800; color: white; }
-        .tagline { color: #aaa; font-size: 9px; text-transform: uppercase; }
+/* HERO */
+.hero{
+    height:60vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
 
-        .social-links {
-            margin-top: 12px;
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-        }
-        .social-links a { color: #fff; font-size: 18px; }
+.hero h1{
+    font-size:2.8rem;
+    font-weight:800;
+    background:linear-gradient(45deg,#fff,var(--primary));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
 
-        /* --- Services: Aligned Left & Rectangular (Flag style) --- */
-        .section-title {
-            text-align: left;
-            padding-left: 20px;
-            font-size: 1rem;
-            color: var(--theme-color);
-            margin: 20px 0 10px 0;
-            text-transform: uppercase;
-        }
+.hero p{
+    font-size:13px;
+    color:#aaa;
+}
 
-        .grid-container {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            padding: 0 20px 40px 20px;
-        }
+/* PROFILE */
+.profile{
+    max-width:380px;
+    margin:-80px auto 40px;
+    background:var(--glass);
+    padding:25px;
+    border-radius:25px;
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.08);
+    text-align:center;
+    box-shadow:0 10px 40px rgba(0,0,0,0.6);
+}
 
-        .card {
-            background: rgba(20, 20, 20, 0.8);
-            padding: 12px 15px;
-            border-radius: 8px;
-            border-left: 4px solid var(--theme-color); /* পতাকার মতো লুক */
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            width: 100%;
-            max-width: 500px; /* বেশি চওড়া হবে না */
-        }
+.profile img{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    border:3px solid var(--primary);
+    margin-bottom:10px;
+}
 
-        .card i { color: var(--theme-color); font-size: 1.2rem; min-width: 25px; }
-        .card-content { text-align: left; }
-        .card h3 { font-size: 0.9rem; color: #fff; margin-bottom: 2px; }
-        .card p { font-size: 0.75rem; color: #888; }
+.profile h2{
+    font-size:1.2rem;
+}
 
-        /* --- Footer: Short & Single Line --- */
-        footer {
-            background: #050505;
-            padding: 20px 10px;
-            text-align: center;
-            border-top: 1px solid #111;
-        }
+.profile p{
+    font-size:11px;
+    color:#aaa;
+    margin-top:5px;
+}
 
-        .footer-emails {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 8px;
-            white-space: nowrap;
-        }
+.social{
+    margin-top:15px;
+    display:flex;
+    justify-content:center;
+    gap:12px;
+}
 
-        .footer-emails a {
-            color: var(--text-color) !important;
-            text-decoration: none;
-            font-size: 11px;
-        }
+.social a{
+    color:#fff;
+    font-size:18px;
+    transition:0.3s;
+}
 
-        .footer-info { font-size: 10px; color: #555; }
-        .copyright-tag { margin-top: 8px; font-size: 9px; color: #444; }
+.social a:hover{
+    color:var(--primary);
+    transform:scale(1.2);
+}
 
-    </style>
-</head>
-<body>
+/* SERVICES */
+.section-title{
+    text-align:center;
+    margin-bottom:20px;
+    font-size:1.2rem;
+    color:var(--primary);
+}
 
-    <nav class="header-nav">
-        <a href="#" class="mini-btn">HOME</a>
-        <a href="#about" class="mini-btn">ABOUT</a>
-        <a href="https://iamfahimofficial.github.io/fahix-" target="_blank" class="mini-btn">SHOP</a>
-        <a href="#services" class="mini-btn">SERVICES</a>
-        <a href="https://iamfahimofficial.github.io/Playlist" target="_blank" class="mini-btn">SONGS</a>
-    </nav>
+.services{
+    padding:20px;
+    display:grid;
+    gap:15px;
+}
 
-    <header class="hero">
-        <h1>FAHIM OFFICIAL</h1>
-        <div class="hero-copy" style="font-size: 10px;">@iamfahimofficial <i class="fas fa-check-circle" style="color:#1DA1F2;"></i></div>
-    </header>
+.card{
+    background:var(--glass);
+    border-radius:15px;
+    padding:15px;
+    display:flex;
+    gap:15px;
+    align-items:center;
+    border:1px solid rgba(255,255,255,0.05);
+    transition:0.3s;
+}
 
-    <section id="about">
-        <div class="profile-card">
-            <img src="FB_IMG_17576597773337071-removebg-preview.png" class="inline-logo" alt="Fahim">
-            <span class="verified-name">Fahim Ahammad Mazumder <i class="fas fa-check-circle" style="color:var(--theme-color); font-size: 14px;"></i></span>
-            <p class="tagline">Digital Strategist & Cybersecurity Researcher | Basic SEO Expert | Basic Web Designer & Developer | Entrepreneur</p>
-            <div class="social-links">
-                <a href="https://facebook.com/iamfahimofficial.old" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://Instagram.com/iamfahimofficial" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://linkedin.com/in/iamfahimofficial-" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://wa.me/8801317621550" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://m.me/iamfahimofficial.old" target="_blank"><i class="fab fa-massanger"></i></a>
-                <a href="https://youtube.com/@iamfahimofficial" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="https://tiktok.com/@iam_fahimofficial" target="_blank"><i class="fab fa-tiktok"></i></a>
-                <a href="https://github.com/iamfahimofficial" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://x.com/xfahimofficial" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-            </div>
-            <a href="https://iamfahimofficial.github.io/Portfolio/" target="_blank" style="color:var(--theme-color); text-decoration:none; font-size:11px; display:block; margin-top:10px; font-weight:bold;">Visit Portfolio Link</a>
-        </div>
-    </section>
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(255,145,0,0.2);
+}
 
-    <h2 class="section-title">My Services</h2>
-    <section id="services" class="grid-container">
-        <div class="card">
-            <i class="fas fa-palette"></i>
-            <div class="card-content">
-                <h3>Portfolio design&domain setup</h3>
-                <p>Premium designs with global domain setup.</p>
-            </div>
-        </div>
+.card i{
+    font-size:22px;
+    color:var(--primary);
+}
 
-        <div class="card">
-            <i class="fas fa-bullhorn"></i>
-            <div class="card-content">
-                <h3>SEO meta and Google adds</h3>
-                <p>Data-driven SEO and high-ROI ad campaigns.</p>
-            </div>
-        </div>
+.card h3{
+    font-size:0.95rem;
+}
 
-        <div class="card">
-            <i class="fas fa-chart-line"></i>
-            <div class="card-content">
-                <h3>Digital marketing solution</h3>
-                <p>Strategic growth and full brand management.</p>
-            </div>
-        </div>
+.card p{
+    font-size:0.75rem;
+    color:#aaa;
+}
 
-        <div class="card">
-            <i class="fas fa-user-shield"></i>
-            <div class="card-content">
-                <h3>Cybersecurity solution</h3>
-                <p>Security audits and digital asset protection.</p>
-            </div>
-        </div>
-    </section>
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    font-size:11px;
+    color:#666;
+}
 
-    <footer>
-        <div class="footer-emails">
-           <a href="mailto:info@fahimofficial.com">info@fahimofficial.com</a>
-           <span style="color:#333;">|</span>
-           <a href="mailto:support@fahix.com">support@fahix.com</a>
-        </div>
-        <div class="footer-info">Chattogram, Bangladesh</div>
-        <p class="copyright-tag">© 31-01-2026 Fahim Official ✔️ All Rights Reserved </p>
-    </footer>
+footer a{
+    color:#fff;
+    text-decoration:none;
+}
 
-</body>
-</html>
+</style></head><body><nav>
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="https://iamfahimofficial.github.io/fahix-" target="_blank">Shop</a>
+<a href="https://iamfahimofficial.github.io/Playlist" target="_blank">Songs</a>
+</nav><section class="hero">
+<h1>FAHIM OFFICIAL</h1>
+<p>@iamfahimofficial ✔️</p>
+</section><section class="profile" id="about">
+<img src="FB_IMG_17576597773337071-removebg-preview.png">
+<h2>Fahim Ahammad Mazumder ✔️</h2>
+<p>Digital Strategist & Cybersecurity Researcher | SEO Expert | Web Designer</p><div class="social">
+<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-linkedin"></i></a>
+<a href="#"><i class="fab fa-github"></i></a>
+</div></section><h2 class="section-title">My Services</h2><section class="services" id="services"><div class="card">
+<i class="fas fa-palette"></i>
+<div>
+<h3>Portfolio Design & Domain Setup</h3>
+<p>Premium modern portfolio with domain.</p>
+</div>
+</div><div class="card">
+<i class="fas fa-bullhorn"></i>
+<div>
+<h3>SEO Meta & Google Ads</h3>
+<p>Boost traffic & ROI focused ads.</p>
+</div>
+</div><div class="card">
+<i class="fas fa-chart-line"></i>
+<div>
+<h3>Digital Marketing</h3>
+<p>Complete brand growth strategy.</p>
+</div>
+</div><div class="card">
+<i class="fas fa-user-shield"></i>
+<div>
+<h3>Cybersecurity Solution</h3>
+<p>Protect your digital assets.</p>
+</div>
+</div></section><footer>
+<p>info@fahimofficial.com | support@fahix.com</p>
+<p>Chattogram, Bangladesh</p>
+<p>© 2026 Fahim Official ✔️</p>
+</footer></body>
+    </html>
