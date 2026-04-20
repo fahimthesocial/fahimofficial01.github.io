@@ -1,319 +1,64 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Fahim Ahammad Mazumder | Official</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><style>
-:root{
-  --primary:#ff9100;
-  --accent:#00d4ff;
-  --glass:rgba(255,255,255,0.06);
-  --text:#ffffff;
-  --muted:#b5b5b5;
-}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fahim Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
 
-*{margin:0;padding:0;box-sizing:border-box}
+<body>
 
-body{
-  font-family:'Inter',sans-serif;
-  color:var(--text);
-  overflow-x:hidden;
-  background:#05060a;
-}
+<section class="header">
+    <div class="left">
+        <h1>FAHIM <br> AHAMMAD <span>MAZUMDER</span></h1>
+        <p class="tagline">Strategize. Optimize. Achieve.</p>
+        <p class="role">Digital Strategist & Entrepreneur</p>
+    </div>
 
-/* animated premium background (NO IMAGE) */
-body::before,
-body::after{
-  content:"";
-  position:fixed;
-  width:500px;
-  height:500px;
-  border-radius:50%;
-  filter:blur(140px);
-  z-index:-1;
-  opacity:0.6;
-  animation:float 12s ease-in-out infinite;
-}
+    <div class="right">
+        <img src="profile.png" alt="Fahim Photo">
+    </div>
+</section>
 
-body::before{
-  background:radial-gradient(circle, var(--primary), transparent 60%);
-  top:-100px;
-  left:-100px;
-}
+<section class="about">
+    <h2>HELLO.</h2>
+    <p>
+        I'm Fahim, a digital strategist & entrepreneur. I have 2 years of experience in learning and practicing 
+        digital marketing, brand building, and problem solving.
+    </p>
+</section>
 
-body::after{
-  background:radial-gradient(circle, var(--accent), transparent 60%);
-  bottom:-120px;
-  right:-120px;
-}
+<section class="info">
 
-@keyframes float{
-  0%,100%{transform:translateY(0px)}
-  50%{transform:translateY(30px)}
-}
-
-/* NAV */
-nav{
-  position:fixed;
-  top:18px;
-  left:50%;
-  transform:translateX(-50%);
-  display:flex;
-  gap:10px;
-  padding:10px 18px;
-  background:rgba(10,10,20,0.6);
-  backdrop-filter:blur(16px);
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:40px;
-  z-index:999;
-}
-
-nav a{
-  color:#fff;
-  text-decoration:none;
-  font-size:12px;
-  padding:6px 12px;
-  border-radius:20px;
-  transition:.3s;
-}
-
-nav a:hover{
-  background:linear-gradient(45deg,var(--primary),var(--accent));
-  color:#000;
-}
-
-/* HERO */
-.hero{
-  height:78vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:20px;
-}
-
-.hero h1{
-  font-size:3rem;
-  font-weight:800;
-  letter-spacing:2px;
-  background:linear-gradient(90deg,#fff,var(--primary),var(--accent));
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-.hero .username{
-  margin-top:8px;
-  font-size:13px;
-  color:var(--muted);
-}
-
-.hero .tagline{
-  margin-top:14px;
-  font-size:14px;
-  max-width:320px;
-  color:#cfcfcf;
-  line-height:1.5;
-}
-
-/* PROFILE */
-.profile{
-  max-width:460px;
-  margin:-70px auto 40px;
-  background:var(--glass);
-  backdrop-filter:blur(20px);
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:28px;
-  padding:28px;
-  text-align:center;
-  box-shadow:0 20px 60px rgba(0,0,0,0.7);
-}
-
-.profile img{
-  width:90px;
-  height:90px;
-  border-radius:50%;
-  border:3px solid var(--primary);
-}
-
-.profile h2{
-  margin-top:10px;
-  font-size:1.25rem;
-}
-
-.profile h2 i{
-  color:var(--accent);
-  font-size:14px;
-}
-
-.profile p{
-  margin-top:8px;
-  font-size:11px;
-  color:#bdbdbd;
-  line-height:1.5;
-}
-
-/* SOCIAL */
-.social{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:16px;
-}
-
-.social a{
-  color:#fff;
-  font-size:18px;
-  transition:.3s;
-  opacity:0.85;
-}
-
-.social a:hover{
-  transform:scale(1.2);
-  color:var(--primary);
-  opacity:1;
-}
-
-.portfolio-link{
-  display:inline-block;
-  margin-top:14px;
-  font-size:12px;
-  color:var(--accent);
-  text-decoration:none;
-  font-weight:600;
-}
-
-/* SERVICES */
-.section-title{
-  text-align:center;
-  font-size:1.4rem;
-  margin:30px 0 18px;
-  letter-spacing:1px;
-}
-
-.services{
-  padding:20px;
-  display:grid;
-  gap:16px;
-  max-width:900px;
-  margin:auto;
-}
-
-.card{
-  display:flex;
-  gap:14px;
-  align-items:center;
-  padding:16px;
-  border-radius:18px;
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.08);
-  backdrop-filter:blur(14px);
-  transition:.35s;
-}
-
-.card:hover{
-  transform:translateY(-6px) scale(1.01);
-  border-color:rgba(255,145,0,0.4);
-  box-shadow:0 15px 40px rgba(255,145,0,0.18);
-}
-
-.card i{
-  font-size:22px;
-  color:var(--primary);
-  min-width:26px;
-}
-
-.card h3{
-  font-size:0.98rem;
-}
-
-.card p{
-  font-size:0.8rem;
-  color:#b5b5b5;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:30px 10px;
-  font-size:11px;
-  color:#8a8a8a;
-  border-top:1px solid rgba(255,255,255,0.05);
-  margin-top:30px;
-}
-
-footer a{
-  color:var(--primary);
-  text-decoration:none;
-}
-
-.footer-emails{
-  display:flex;
-  justify-content:center;
-  gap:8px;
-  flex-wrap:wrap;
-  margin-bottom:8px;
-}
-
-</style></head><body><nav>
-<a href="#">HOME</a>
-<a href="#about">ABOUT</a>
-<a href="https://iamfahimofficial.github.io/fahix-" target="_blank">SHOP</a>
-<a href="#services">SERVICES</a>
-<a href="https://iamfahimofficial.github.io/Playlist" target="_blank">SONGS</a>
-</nav><section class="hero">
-<h1>FAHIM OFFICIAL</h1>
-<div class="username">@iamfahimofficial <i class="fas fa-check-circle"></i></div>
-<p class="tagline">Digital Strategist & Cybersecurity Researcher | Basic SEO Expert | Basic Web Designer & Developer | Entrepreneur</p>
-</section><section class="profile" id="about">
-<img src="FB_IMG_17576597773337071-removebg-preview.png" alt="Fahim">
-<h2>Fahim Ahammad Mazumder <i class="fas fa-check-circle"></i></h2>
-<p>Digital Strategist & Cybersecurity Researcher | Basic SEO Expert | Basic Web Designer & Developer | Entrepreneur</p><div class="social">
-<a href="https://facebook.com/iamfahimofficial.old" target="_blank"><i class="fab fa-facebook"></i></a>
-<a href="https://Instagram.com/iamfahimofficial" target="_blank"><i class="fab fa-instagram"></i></a>
-<a href="https://linkedin.com/in/iamfahimofficial-" target="_blank"><i class="fab fa-linkedin"></i></a>
-<a href="https://wa.me/8801317621550" target="_blank"><i class="fab fa-whatsapp"></i></a>
-<a href="https://m.me/imo.im/+8801975573908" target="_blank"><i class="fab fa-imo"></i></a>
-<a href="https://youtube.com/@iamfahimofficial" target="_blank"><i class="fab fa-youtube"></i></a>
-<a href="https://tiktok.com/@iam_fahimofficial" target="_blank"><i class="fab fa-tiktok"></i></a>
-<a href="https://github.com/iamfahimofficial" target="_blank"><i class="fab fa-github"></i></a>
-<a href="https://x.com/xfahimofficial" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-</div><a class="portfolio-link" href="https://iamfahimofficial.github.io/Portfolio/" target="_blank">Visit Portfolio Link</a>
-
-</section><h2 class="section-title">My Services</h2><section class="services" id="services">
-<div class="card">
-<i class="fas fa-palette"></i>
-<div>
-<h3>Portfolio design & domain setup</h3>
-<p>Premium designs with global domain setup.</p>
+<div class="box">
+    <h3>Education</h3>
+    <p>Diploma in CSE</p>
+    <p>Chattogram Govt Polytechnic Institute</p>
+    <p>2025 - 2026</p>
 </div>
-</div><div class="card">
-<i class="fas fa-bullhorn"></i>
-<div>
-<h3>SEO meta and Google ads</h3>
-<p>Data-driven SEO and high-ROI ad campaigns.</p>
+
+<div class="box">
+    <h3>Contact</h3>
+    <a href="mailto:info@fahimofficial.com">Email</a>
+    <a href="https://wa.me/8801317621550">WhatsApp</a>
+    <a href="https://facebook.com/iamfahimofficial.old">Facebook</a>
+    <a href="https://instagram.com/iamfahimofficial">Instagram</a>
+    <a href="https://linkedin.com/in/iam-fahimofficial">LinkedIn</a>
+    <a href="https://x.com/xfahimofficial">Twitter</a>
 </div>
-</div><div class="card">
-<i class="fas fa-chart-line"></i>
-<div>
-<h3>Digital marketing solution</h3>
-<p>Strategic growth and full brand management.</p>
-</div>
-</div><div class="card">
-<i class="fas fa-user-shield"></i>
-<div>
-<h3>Cybersecurity solution</h3>
-<p>Security audits and digital asset protection.</p>
-</div>
-</div>
-</section><footer>
-<div class="footer-emails">
-<a href="mailto:info@fahimofficial.com">info@fahimofficial.com</a>
-<span>|</span>
-<a href="mailto:support@fahix.com">support@fahix.com</a>
-</div>
-<p>Chattogram, Bangladesh</p>
-<p>© 31-01-2026 Fahim Official ✔️ All Rights Reserved</p>
-</footer></body>
-  </html>
+
+</section>
+
+<section class="skills">
+    <h3>What I Do</h3>
+    <div class="skill-box">
+        <div>Problem Solving</div>
+        <div>Web Development</div>
+        <div>Digital Marketing</div>
+        <div>Brand Building</div>
+    </div>
+</section>
+
+</body>
+</html>
