@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #f5f5f5;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    background: white;
+}
+
+.header h1 {
+    font-size: 40px;
+}
+
+.header span {
+    color: orange;
+}
+
+.tagline {
+    color: orange;
+}
+
+.role {
+    background: black;
+    color: white;
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 10px;
+}
+
+.right img {
+    width: 200px;
+    border-radius: 50%;
+}
+
+/* ABOUT */
+.about {
+    padding: 30px;
+    background: #fff;
+    margin-top: 10px;
+}
+
+/* INFO */
+.info {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.box {
+    background: white;
+    padding: 20px;
+    flex: 1;
+    border-radius: 10px;
+}
+
+.box a {
+    display: block;
+    margin: 5px 0;
+    text-decoration: none;
+    color: black;
+}
+
+/* SKILLS */
+.skills {
+    padding: 20px;
+}
+
+.skill-box {
+    display: flex;
+    gap: 10px;
+}
+
+.skill-box div {
+    background: orange;
+    padding: 15px;
+    border-radius: 10px;
+}
