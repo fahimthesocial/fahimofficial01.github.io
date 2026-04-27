@@ -1,139 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahim Ahammad Mazumder | Portfolio</title>
 
-<title>Fahim Ahammad Mazumder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
 
-<!-- Stylish Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
-    body {
-        margin: 0;
-        background: #0b0f1a;
-        color: #ffffff;
-        font-family: 'Nunito', sans-serif;
-        text-align: center;
-    }
+        body {
+            background: linear-gradient(135deg, #0b0f1a 0%, #162032 100%);
+            color: #ffffff;
+            font-family: 'Nunito', sans-serif;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
-    .container {
-        padding: 20px;
-    }
+        /* Header Styling */
+        header {
+            padding: 40px 20px 20px;
+        }
 
-    .portfolio-img {
-        max-width: 92%;
-        border-radius: 16px;
-        box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-    }
+        header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 36px;
+            font-weight: 800;
+            background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
 
-    footer {
-        margin-top: 40px;
-        padding: 30px 20px;
-        background: #020617;
-    }
+        header p {
+            font-size: 16px;
+            color: #94a3b8;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
 
-    .title {
-        font-family: 'Poppins', sans-serif;
-        font-size: 20px;
-        font-weight: 600;
-        margin: 8px 0;
-        letter-spacing: 1px;
-    }
+        /* Portfolio Image Grid Layout */
+        .container {
+            flex: 1;
+            padding: 30px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            align-items: center;
+        }
 
-    .socials {
-        margin: 20px 0;
-    }
+        .portfolio-img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+        }
 
-    .socials a {
-        margin: 0 12px;
-        display: inline-block;
-        transition: 0.3s;
-    }
+        .portfolio-img:hover {
+            transform: translateY(-10px);
+            border: 2px solid #3a7bd5;
+            box-shadow: 0 15px 40px rgba(58, 123, 213, 0.4);
+        }
 
-    .socials img {
-        width: 36px;
-        height: 36px;
-        filter: brightness(0.9);
-    }
+        /* Footer Styling */
+        footer {
+            background: rgba(2, 6, 23, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 40px 20px 25px;
+            border-top: 1px solid #1e293b;
+            margin-top: auto;
+        }
 
-    .socials a:hover {
-        transform: scale(1.2);
-    }
+        .footer-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
 
-    .email {
-        font-size: 14px;
-        margin-top: 10px;
-        letter-spacing: 0.5px;
-    }
+        /* Social Media Icons */
+        .socials {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
 
-    .copyright {
-        margin-top: 15px;
-        font-size: 13px;
-        opacity: 0.7;
-        line-height: 1.6;
-    }
-</style>
+        .socials a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: #1e293b;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
 
+        .socials img {
+            width: 24px;
+            height: 24px;
+            transition: all 0.3s ease;
+            filter: brightness(0) invert(1); /* Makes the icons white */
+        }
+
+        /* Hover Effects for Socials */
+        .socials a:hover {
+            transform: translateY(-5px);
+            background: #3a7bd5;
+            box-shadow: 0 8px 20px rgba(58, 123, 213, 0.5);
+        }
+
+        .socials a:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Contact & Copyright Info */
+        .email {
+            font-size: 15px;
+            color: #94a3b8;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .email span {
+            color: #3a7bd5;
+        }
+
+        .copyright {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+        
+        .copyright b {
+            color: #cbd5e1;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 28px;
+            }
+            .socials a {
+                width: 45px;
+                height: 45px;
+            }
+            .socials img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="container">
-    <!-- তোমার GitHub image এখানে বসাও -->
-    <img src="file_00000000647c71fa9c674608d922c39c.png" class="portfolio-img">
-    <img src="image1_246afd4b-de59-4e78-bfba-1def0f59767b.png" class="portfolio-img">
-    <img src="file_00000000e71472088117480886cf9e07.png" class="portfolio-img">
-</div>
+    <header>
+        <h1>Fahim Ahammad Mazumder</h1>
+        <p>Creative Portfolio & Social Links</p>
+    </header>
 
-<footer>
-
-    <div class="title">Contact with me :</div>
-    <div class="title">Social media platform :</div>
-
-    <div class="socials">
-
-        <a href="https://facebook.com/fahimthesocial" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
-        </a>
-
-        <a href="https://instagram.com/fahimthesocial" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png">
-        </a>
-
-        <a href="https://tiktok.com/@fahimthesocial" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
-        </a>
-
-        <a href="https://github.com/fahimthesocial" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png">
-        </a>
-
-        <a href="https://linkedin.com/in/fahimthesocial" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png">
-        </a>
-
-        <a href="https://x.com/fahimthesocial" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png">
-        </a>
-
-        <a href="https://wa.me/8801317621550" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-        </a>
-
+    <div class="container">
+        <img src="file_00000000647c71fa9c674608d922c39c.png" alt="Portfolio Image 1" class="portfolio-img">
+        <img src="image1_246afd4b-de59-4e78-bfba-1def0f59767b.png" alt="Portfolio Image 2" class="portfolio-img">
+        <img src="file_00000000e71472088117480886cf9e07.png" alt="Portfolio Image 3" class="portfolio-img">
     </div>
 
-    <div class="email">
-        info@fahimofficial.com | support@fahix.com
-    </div>
+    <footer>
+        <div class="footer-title">Connect With Me On Social Media</div>
 
-    <div class="copyright">
-        ©️ Fahim Official ✔️ 2026 All Right Reserved <br>
-        Chattogram Bangladesh
-    </div>
+        <div class="socials">
+            <a href="https://facebook.com/fahimthesocial" target="_blank" title="Facebook">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+            </a>
 
-</footer>
+            <a href="https://instagram.com/fahimthesocial" target="_blank" title="Instagram">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
+            </a>
+
+            <a href="https://tiktok.com/@fahimthesocial" target="_blank" title="TikTok">
+                <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
+            </a>
+
+            <a href="https://github.com/fahimthesocial" target="_blank" title="GitHub">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
+            </a>
+
+            <a href="https://linkedin.com/in/fahimthesocial" target="_blank" title="LinkedIn">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn">
+            </a>
+
+            <a href="https://twitter.com/fahimthesocial" target="_blank" title="Twitter (Bird)">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter Bird">
+            </a>
+
+            <a href="https://x.com/fahimthesocial" target="_blank" title="X">
+                <img src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png" alt="X Logo">
+            </a>
+
+            <a href="https://wa.me/8801317621550" target="_blank" title="WhatsApp">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+            </a>
+        </div>
+
+        <div class="email">
+            info@fahimofficial.com <span>|</span> support@fahix.com
+        </div>
+
+        <div class="copyright">
+            ©️ <b>Fahim Official</b> ✔️ 2026 All Rights Reserved <br>
+            Chattogram, Bangladesh
+        </div>
+    </footer>
 
 </body>
-        </html>
+</html>
