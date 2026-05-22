@@ -64,21 +64,257 @@ header h1{
     transform:scale(1.02);
 }
 
-/* INSTAGRAM POST EMBED */
-.instagram-container {
+/* INSTAGRAM CUSTOM POST STYLING */
+.insta-post-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 30px auto;
-    padding: 0 10px;
+    padding: 20px;
+    margin: 20px 0;
 }
 
-.instagram-container iframe {
-    border-radius: 12px !important;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
-    max-width: 540px !important;
-    width: 100% !important;
+.insta-card {
+    background: #000000;
+    border: 1px solid #262626;
+    border-radius: 12px;
+    max-width: 470px;
+    width: 100%;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+/* Header */
+.insta-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    border-bottom: 1px solid #262626;
+}
+
+.insta-user-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.insta-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    padding: 2px;
+}
+
+.insta-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #000;
+}
+
+.insta-username-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.insta-main-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.insta-location {
+    font-size: 11px;
+    color: #a8a8a8;
+}
+
+.insta-more-btn {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Music Info Bar below Header */
+.insta-music-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px 8px;
+    font-size: 12px;
+    color: #a8a8a8;
+}
+
+.insta-music-bar span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 80%;
+}
+
+/* Carousel/Images */
+.insta-image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #121212;
+    overflow: hidden;
+}
+
+.insta-slides {
+    display: flex;
+    width: 200%;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.insta-slides img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Slider Navigation Buttons */
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #000;
+    z-index: 5;
+    font-size: 14px;
+}
+.slide-prev { left: 10px; display: none; }
+.slide-next { right: 10px; }
+
+/* Slide Badge (1/2) */
+.slide-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(18, 18, 18, 0.75);
+    color: #f5f5f5;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    z-index: 4;
+}
+
+/* Audio Controller Button (Instagram Style floating icon) */
+.insta-audio-ctrl {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(18, 18, 18, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+}
+
+.insta-audio-ctrl svg {
+    width: 16px;
+    height: 16px;
+    fill: #ffffff;
+}
+
+/* Action Area (Likes, Comments, Views) */
+.insta-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 12px 6px;
+}
+
+.insta-left-icons {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.insta-icon {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.insta-icon.liked svg {
+    fill: #ff3040;
+}
+
+/* Carousel Dots Indicator */
+.insta-dots {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.insta-dot {
+    width: 6px;
+    height: 6px;
+    background: #a8a8a8;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+.insta-dot.active {
+    background: #0095f6;
+    transform: scale(1.2);
+}
+
+/* Views & Likes Text */
+.insta-counters {
+    padding: 0 12px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: flex;
+    gap: 12px;
+}
+
+.insta-views {
+    color: #00d2ff;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Content & Caption Area */
+.insta-content-box {
+    padding: 0 12px 14px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.insta-caption-text {
+    color: #f5f5f5;
+    white-space: pre-line;
+}
+
+.insta-caption-text strong {
+    color: #ffffff;
+    margin-right: 6px;
+}
+
+.insta-tags {
+    color: #e0f1ff;
+    cursor: pointer;
+    word-break: break-word;
 }
 
 /* FOOTER */
@@ -169,29 +405,86 @@ footer{
     <img src="file_00000000647c71fa9c674608d922c39c.png" class="portfolio-img">
 </div>
 
-<div class="instagram-container">
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DWhCCdhkw42/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-        <div style="padding:16px;">
-            <a href="https://www.instagram.com/p/DWhCCdhkw42/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
-                <div style="display: flex; flex-direction: row; align-items: center;">
-                    <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div>
-                    <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
-                        <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div>
-                        <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div>
-                    </div>
+<div class="insta-post-wrapper">
+    <div class="insta-card" id="myInstaPost">
+        
+        <div class="insta-header">
+            <div class="insta-user-area">
+                <div class="insta-avatar">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Profile">
                 </div>
-                <div style="padding: 19% 0;"></div>
-                <div style="display:block; height:50px; margin:0 auto 12px; width:50px;">
-                    <svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g transform="translate(511.000000, 20.000000)"><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C519.44,71.82 516.42,68.8 514.893,64.901 C514.483,63.846 513.996,62.26 513.862,59.341 C513.719,56.183 513.688,55.236 513.688,47.24 C513.688,39.243 513.719,38.297 513.862,35.138 C513.996,32.219 514.483,30.633 514.893,29.578 C516.42,25.679 519.44,22.659 523.338,21.132 C524.393,20.722 525.979,20.235 528.898,20.102 C532.056,19.958 533.003,19.928 541,19.928 C548.997,19.928 549.944,19.958 553.102,20.102 C556.021,20.235 557.607,20.722 558.662,21.132 C562.56,22.659 565.58,25.679 567.107,29.578 C567.517,30.633 568.004,32.219 568.138,35.138 C568.281,38.297 568.312,39.243 568.312,47.24 C568.312,55.236 568.281,56.183 568.138,59.341 M574.252,34.878 C574.08,31.258 573.5,28.784 572.646,26.595 C571.765,24.331 570.478,22.404 568.602,20.528 C566.726,18.652 564.799,17.364 562.535,16.484 C560.346,15.63 557.872,15.05 554.252,14.878 C551.077,14.733 550.069,14.7 541,14.7 C531.931,14.7 530.923,14.733 527.748,14.878 C524.128,15.05 521.654,15.63 519.465,16.484 C517.201,17.364 515.274,18.652 513.398,20.528 C511.522,22.404 510.234,24.331 509.354,26.595 C508.5,28.784 507.919,31.258 507.747,34.878 C507.602,38.053 507.57,39.061 507.57,48.13 C507.57,57.199 507.602,58.207 507.747,61.382 C507.919,65.001 508.5,67.476 509.354,69.665 C510.234,71.929 511.522,73.856 513.398,75.732 C515.274,77.608 517.201,78.896 519.465,79.776 C521.654,80.63 524.128,81.21 527.748,81.382 C530.923,81.527 531.931,81.558 541,81.558 C550.069,81.558 551.077,81.527 554.252,81.382 C557.872,81.21 560.346,80.63 562.535,79.776 C564.799,78.896 566.726,77.608 568.602,75.732 C570.478,73.856 571.765,71.929 572.646,69.665 C573.5,67.476 574.08,65.001 574.252,61.382 C574.396,58.207 574.429,57.199 574.429,48.13 C574.429,39.061 574.396,38.053 574.252,34.878"></path></g></g></g></svg>
+                <div class="insta-username-info">
+                    <span class="insta-main-name">fahimthesocial</span>
+                    <span class="insta-location">Sajek Valley</span>
                 </div>
-                <div style="padding-top: 8px;">
-                    <div style="color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div>
-                </div>
-                <div style="padding: 12.5% 0;"></div>
-            </a>
+            </div>
+            <div class="insta-more-btn">•••</div>
         </div>
-    </blockquote>
-    <script async src="//www.instagram.com/embed.js"></script>
+        
+        <div class="insta-music-bar">
+            🎵 <span>Tanveer Evan • ki Maya je Tomay (icche kore song)</span>
+        </div>
+
+        <div class="insta-image-container">
+            <div class="slide-badge" id="slideBadge">1/2</div>
+            
+            <button class="slide-btn slide-prev" id="prevBtn">&#10094;</button>
+            <button class="slide-btn slide-next" id="nextBtn">&#10095;</button>
+            
+            <div class="insta-slides" id="imageSlides">
+                <img src="IMG-20260330-WA0118.jpg" alt="Fahim Photo 1">
+                <img src="IMG_20260522_111707.jpg" alt="Fahim Photo 2">
+            </div>
+
+            <button class="insta-audio-ctrl" id="audioToggleBtn" title="Mute/Unmute">
+                <svg id="speakerIcon" viewBox="0 0 24 24">
+                    <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM5 9v6h4l5 5V4L9 9H5zm13.5 3c0 2.45-1.39 4.57-3.41 5.63v2.07c3.14-1.3 5.41-4.43 5.41-8.1s-2.27-6.8-5.41-8.1v2.07c2.02 1.06 3.41 3.18 3.41 5.63z"/>
+                    <path id="muteSlash" d="M4.27 3L3 4.27 7.73 9H5v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM14 4L11.41 6.59 14 9.17V4zm2.5 8c0-.36-.05-.71-.13-1.05l1.52 1.52c.07-.15.11-.31.11-.47z" style="display:inline;"/>
+                </svg>
+            </button>
+        </div>
+
+        <audio id="instaAudio" loop>
+            <source src="Tanveer_Evan_ki_Maya_je_Tomay_lyric_icche_kore_song.mp3" type="audio/mpeg">
+        </audio>
+
+        <div class="insta-actions">
+            <div class="insta-left-icons">
+                <div class="insta-icon liked">
+                    <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                </div>
+                <div class="insta-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M21.99 11.3c0-4.63-4.03-8.3-9-8.3s-9 3.67-9 8.3c0 2.57 1.25 4.88 3.23 6.43l-.8 2.92c-.1.37.27.7.63.53l3.24-1.54c.85.24 1.75.36 2.7.36 4.97 0 9-3.67 9-8.3z"/></svg>
+                </div>
+                <div class="insta-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.84c4.56-.93 8-4.96 8-9.84z"/></svg>
+                </div>
+            </div>
+            <div class="insta-dots">
+                <div class="insta-dot active" id="dot1"></div>
+                <div class="insta-dot" id="dot2"></div>
+            </div>
+            <div style="width:24px;"></div> </div>
+
+        <div class="insta-counters">
+            <span>18 likes</span>
+            <span class="insta-views">500k 👁️</span>
+        </div>
+
+        <div class="insta-content-box">
+            <div class="insta-caption-text">
+                <strong>fahimthesocial</strong>😊 পাহাড়ের শিখরে উঠে দেখো, 
+                সফলতার রূপ কত সুন্দর! 
+                প্রকৃতির কোলে মন হারাও, 
+                স্বপ্নগুলো হয়ে যাবে সত্যের। 🌄
+                
+                <div class="insta-tags">
+                😊 #প্রকৃতিপাহাড় #সফলতা #মনপ্রাণ #পাহাড়েরগল্প #সূর্যেরআলো #প্রাকৃতিকসৌন্দর্য #ভ্রমণ #মনোরম #FahimTheSocial #FahimOfficial
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
 
 <footer>
@@ -243,6 +536,85 @@ info@fahimofficial.com | support@fahix.com
 </div>
 
 </footer>
+
+<script>
+// ১. স্লাইডার কন্ট্রোল স্ক্রিপ্ট
+const slides = document.getElementById('imageSlides');
+const badge = document.getElementById('slideBadge');
+const dot1 = document.getElementById('dot1');
+const dot2 = document.getElementById('dot2');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+function showSlide(index) {
+    if(index === 0) {
+        slides.style.transform = 'translateX(0%)';
+        badge.innerText = '1/2';
+        dot1.classList.add('active');
+        dot2.classList.remove('active');
+        prevBtn.style.display = 'none';
+        nextBtn.style.display = 'flex';
+    } else {
+        slides.style.transform = 'translateX(-50%)';
+        badge.innerText = '2/2';
+        dot1.classList.remove('active');
+        dot2.classList.add('active');
+        prevBtn.style.display = 'flex';
+        nextBtn.style.display = 'none';
+    }
+}
+
+prevBtn.addEventListener('click', () => showSlide(0));
+nextBtn.addEventListener('click', () => showSlide(1));
+
+// ২. অটো-প্লে এবং মিউট/আনমিউট কন্ট্রোল স্ক্রিপ্ট
+const audio = document.getElementById('instaAudio');
+const audioBtn = document.getElementById('audioToggleBtn');
+const muteSlash = document.getElementById('muteSlash');
+let isUserMuted = true; // আধুনিক ব্রাউজার পলিসির জন্য ডিফল্ট মিউট থাকবে
+
+// সাউন্ড অন/অফ বাটন লজিক
+audioBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (audio.muted || isUserMuted) {
+        audio.muted = false;
+        isUserMuted = false;
+        audio.play().catch(err => console.log("Audio play blocked", err));
+        muteSlash.style.display = 'none'; // স্পিকার ফুল অন আইকন
+    } else {
+        audio.muted = true;
+        isUserMuted = true;
+        muteSlash.style.display = 'inline'; // স্পিকারের ওপর ক্রস আইকন
+    }
+});
+
+// স্ক্রিন ডিটেকশন (ইউজার স্ক্রল করে পোস্টের ওপর আসলে গান বাজবে, চলে গেলে পজ হবে)
+const observerOptions = {
+    root: null,
+    threshold: 0.5 // ৫০% পোস্ট স্ক্রিনে দৃশ্যমান হলে ট্রিকগার হবে
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // স্ক্রিনে আসলে প্লে করার চেষ্টা করবে
+            if (!isUserMuted) {
+                audio.play().catch(err => console.log("Autoplay context waiting for user click", err));
+            } else {
+                // ব্রাউজার যদি ফাস্ট টাইম অটো-প্লে ব্লক করে, ব্যাকগ্রাউন্ডে রেডি রাখবে
+                audio.play().then(() => {
+                    if(isUserMuted) audio.muted = true;
+                }).catch(() => {});
+            }
+        } else {
+            // স্ক্রিন থেকে চলে গেলে মিউজিক পজ হবে
+            audio.pause();
+        }
+    });
+}, observerOptions);
+
+observer.observe(document.getElementById('myInstaPost'));
+</script>
 
 </body>
 </html>
