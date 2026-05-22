@@ -455,7 +455,7 @@ footer{
         </div>
 
         <audio id="instaAudio" loop>
-            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+            <source src="Icche koree_Fahim Official_EvansEdited Lyrics .m4a" type="audio/mp4">
         </audio>
 
         <div class="insta-actions">
@@ -489,7 +489,8 @@ footer{
 
         <div class="insta-content-box">
             <div class="insta-caption-text">
-                <strong>fahimthesocial</strong>😊 পাহাড়ের শিখরে উঠে দেখো, 
+                <strong>fahimthesocial</strong>
+               😊 পাহাড়ের শিখরে উঠে দেখো, 
                 সফলতার রূপ কত সুন্দর! 
                 প্রকৃতির কোলে মন হারাও, 
                 স্বপ্নগুলো হয়ে যাবে সত্যের। 🌄
@@ -612,7 +613,7 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             if (!isUserMuted) {
-                audio.play().catch(err => console.log("Autoplay blocked by browser policy", err));
+                audio.play().catch(err => console.log("Autoplay waiting for click", err));
             } else {
                 audio.play().then(() => {
                     if(isUserMuted) audio.muted = true;
@@ -629,3 +630,4 @@ observer.observe(document.getElementById('myInstaPost'));
 
 </body>
 </html>
+ 
