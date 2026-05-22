@@ -211,7 +211,7 @@ header h1{
     z-index: 4;
 }
 
-/* Audio Controller Button (Instagram Style floating icon) */
+/* Audio Controller Button */
 .insta-audio-ctrl {
     position: absolute;
     bottom: 12px;
@@ -284,14 +284,23 @@ header h1{
     font-weight: 600;
     margin-bottom: 6px;
     display: flex;
-    gap: 12px;
+    gap: 14px;
+    align-items: center;
+}
+
+.insta-likes-count {
+    color: #ffffff;
 }
 
 .insta-views {
     color: #00d2ff;
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 5px;
+}
+
+.insta-views svg {
+    fill: #00d2ff;
 }
 
 /* Content & Caption Area */
@@ -315,6 +324,7 @@ header h1{
     color: #e0f1ff;
     cursor: pointer;
     word-break: break-word;
+    margin-top: 5px;
 }
 
 /* FOOTER */
@@ -445,7 +455,7 @@ footer{
         </div>
 
         <audio id="instaAudio" loop>
-            <source src="Tanveer_Evan_ki_Maya_je_Tomay_lyric_icche_kore_song.mp3" type="audio/mpeg">
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
         </audio>
 
         <div class="insta-actions">
@@ -464,11 +474,17 @@ footer{
                 <div class="insta-dot active" id="dot1"></div>
                 <div class="insta-dot" id="dot2"></div>
             </div>
-            <div style="width:24px;"></div> </div>
+            <div style="width:24px;"></div>
+        </div>
 
         <div class="insta-counters">
-            <span>18 likes</span>
-            <span class="insta-views">500k 👁️</span>
+            <span class="insta-likes-count">10k likes</span>
+            <span class="insta-views">
+                <svg width="16" height="16" viewBox="0 0 24 24">
+                    <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                </svg>
+                500k views
+            </span>
         </div>
 
         <div class="insta-content-box">
@@ -538,7 +554,7 @@ info@fahimofficial.com | support@fahix.com
 </footer>
 
 <script>
-// ১. স্লাইডার কন্ট্রোল স্ক্রিপ্ট
+// স্লাইডার কন্ট্রোল স্ক্রিপ্ট
 const slides = document.getElementById('imageSlides');
 const badge = document.getElementById('slideBadge');
 const dot1 = document.getElementById('dot1');
@@ -567,47 +583,42 @@ function showSlide(index) {
 prevBtn.addEventListener('click', () => showSlide(0));
 nextBtn.addEventListener('click', () => showSlide(1));
 
-// ২. অটো-প্লে এবং মিউট/আনমিউট কন্ট্রোল স্ক্রিপ্ট
+// অটো-প্লে এবং মিউট/আনমিউট কন্ট্রোল স্ক্রিপ্ট
 const audio = document.getElementById('instaAudio');
 const audioBtn = document.getElementById('audioToggleBtn');
 const muteSlash = document.getElementById('muteSlash');
-let isUserMuted = true; // আধুনিক ব্রাউজার পলিসির জন্য ডিফল্ট মিউট থাকবে
+let isUserMuted = true; 
 
-// সাউন্ড অন/অফ বাটন লজিক
 audioBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     if (audio.muted || isUserMuted) {
         audio.muted = false;
         isUserMuted = false;
         audio.play().catch(err => console.log("Audio play blocked", err));
-        muteSlash.style.display = 'none'; // স্পিকার ফুল অন আইকন
+        muteSlash.style.display = 'none'; 
     } else {
         audio.muted = true;
         isUserMuted = true;
-        muteSlash.style.display = 'inline'; // স্পিকারের ওপর ক্রস আইকন
+        muteSlash.style.display = 'inline'; 
     }
 });
 
-// স্ক্রিন ডিটেকশন (ইউজার স্ক্রল করে পোস্টের ওপর আসলে গান বাজবে, চলে গেলে পজ হবে)
 const observerOptions = {
     root: null,
-    threshold: 0.5 // ৫০% পোস্ট স্ক্রিনে দৃশ্যমান হলে ট্রিকগার হবে
+    threshold: 0.5 
 };
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            // স্ক্রিনে আসলে প্লে করার চেষ্টা করবে
             if (!isUserMuted) {
-                audio.play().catch(err => console.log("Autoplay context waiting for user click", err));
+                audio.play().catch(err => console.log("Autoplay blocked by browser policy", err));
             } else {
-                // ব্রাউজার যদি ফাস্ট টাইম অটো-প্লে ব্লক করে, ব্যাকগ্রাউন্ডে রেডি রাখবে
                 audio.play().then(() => {
                     if(isUserMuted) audio.muted = true;
                 }).catch(() => {});
             }
         } else {
-            // স্ক্রিন থেকে চলে গেলে মিউজিক পজ হবে
             audio.pause();
         }
     });
