@@ -1,75 +1,41 @@
-body {
-    margin: 0;
-    font-family: Arial;
-    background: #f4f4f4;
+.founder-text{
+    margin-top:6px;
+    font-size:15px;
+    color:#cbd5e1;
+    font-weight:500;
 }
 
-/* TOP SECTION */
-.container {
-    display: flex;
-    justify-content: space-between;
-    padding: 50px;
-    background: white;
+.education-section{
+    max-width:900px;
+    margin:0 auto 20px;
+    padding:0 20px;
 }
 
-.left {
-    width: 60%;
+.education-card{
+    background:rgba(255,255,255,0.03);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:18px;
+    padding:22px;
 }
 
-.left h1 {
-    font-size: 45px;
-    margin: 0;
+.education-title{
+    font-size:18px;
+    font-weight:700;
+    color:#00d2ff;
+    margin-bottom:14px;
 }
 
-.left span {
-    color: orange;
+.education-item{
+    margin-bottom:12px;
 }
 
-.tagline {
-    color: orange;
-    margin: 10px 0;
+.education-item h4{
+    color:#fff;
+    margin-bottom:4px;
 }
 
-.black-box {
-    background: black;
-    color: white;
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 8px;
-    margin-bottom: 15px;
+.education-item p{
+    color:#94a3b8;
+    line-height:1.6;
 }
-
-.about {
-    color: #555;
-}
-
-/* IMAGE */
-.right img {
-    width: 220px;
-    border-radius: 50%;
-}
-
-/* BOTTOM */
-.bottom {
-    display: flex;
-    gap: 20px;
-    padding: 30px;
-}
-
-.card {
-    background: white;
-    padding: 20px;
-    flex: 1;
-    border-radius: 12px;
-}
-
-.card a {
-    display: block;
-    margin: 5px 0;
-    text-decoration: none;
-    color: black;
-}
-
-.yellow {
-    background: orange;
-    }
