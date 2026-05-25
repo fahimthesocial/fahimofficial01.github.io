@@ -26,7 +26,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #000000; /* Deep black background like Hussam Ansari */
+    background: #000000;
     color: var(--text-main);
     min-height: 100vh;
     padding-bottom: 20px;
@@ -60,17 +60,35 @@ header {
 }
 
 header h1 {
-    font-size: 20px; /* Adjusted to fit in one line */
+    font-size: 20px;
     font-weight: 700;
     color: #ffffff;
-    white-space: nowrap; /* Forces text to stay in one line */
+    white-space: nowrap;
     letter-spacing: -0.3px;
+}
+
+/* New Header Handle Added */
+.header-handle {
+    font-size: 13px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 2px;
+    font-weight: 500;
+}
+
+.header-handle .blue-tick {
+    width: 14px;
+    height: 14px;
+    fill: #0095f6;
 }
 
 .tagline {
     font-size: 12px;
     color: #e2e8f0;
-    margin: 6px 0 15px;
+    margin: 8px 0 15px;
     font-weight: 500;
 }
 
@@ -95,7 +113,7 @@ header h1 {
 .header-socials img {
     width: 22px;
     height: 22px;
-    filter: invert(1); /* Makes black icons white */
+    filter: invert(1);
 }
 
 /* --- HUSSAM ANSARI STYLE BUTTONS --- */
@@ -286,169 +304,121 @@ header h1 {
     height: 20px;
 }
 
-/* --- INSTAGRAM WIDGET --- */
-.insta-card {
-    background: #000000;
-    border: 1px solid #262626;
-    border-radius: 12px;
-    width: 100%;
-    overflow: hidden;
-    margin-bottom: 25px;
-}
-
-.insta-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-}
-
-.insta-user-area {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.insta-avatar {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
-    padding: 1.5px;
-}
-
-.insta-avatar img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    background: #000;
-}
-
-.insta-name-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.insta-main-name {
-    font-size: 13px;
-    font-weight: 600;
-    color: #ffffff;
-}
-
-.blue-tick {
-    width: 14px;
-    height: 14px;
-    fill: #0095f6;
-}
-
-.insta-location {
-    font-size: 10px;
-    color: #a8a8a8;
-    display: block;
-}
-
-.insta-music-bar {
-    padding: 0 10px 8px;
-    font-size: 11px;
-    color: #a8a8a8;
-}
-
-.insta-image-container {
+/* --- CUSTOM VIDEO PLAYER (Replaced Instagram) --- */
+.custom-video-container {
     position: relative;
     width: 100%;
-    aspect-ratio: 1 / 1;
-    background: #121212;
+    aspect-ratio: 16 / 9; /* Standard YouTube Size */
+    background: #0a0a0a;
+    border-radius: 12px;
     overflow: hidden;
+    margin-bottom: 25px;
+    border: 1px solid #262626;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-.insta-slides {
-    display: flex;
-    width: 200%;
-    height: 100%;
-    transition: transform 0.3s ease-in-out;
-}
-
-.insta-slides img {
-    width: 50%;
+#portfolioVideo {
+    width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.slide-btn {
+.video-center-play {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.7);
-    border: none;
-    width: 24px;
-    height: 24px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 210, 255, 0.85); /* Cool Custom Accent Color */
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    z-index: 5;
-    font-size: 10px;
+    z-index: 10;
+    transition: transform 0.2s, background 0.2s;
+    backdrop-filter: blur(5px);
+}
+
+.video-center-play:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: var(--accent-blue);
+}
+
+.video-center-play svg {
+    fill: #fff;
+    width: 32px;
+    height: 32px;
+    margin-left: 4px;
+}
+
+.video-bottom-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    padding: 15px 15px 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 10;
+}
+
+.custom-video-container:hover .video-bottom-controls,
+.video-bottom-controls.active {
+    opacity: 1;
+}
+
+#playPauseBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.slide-prev { left: 10px; display: none; }
-.slide-next { right: 10px; }
 
-.slide-badge {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    padding: 3px 8px;
-    border-radius: 12px;
-    font-size: 10px;
-    z-index: 4;
+#playPauseBtn svg {
+    fill: #fff;
+    width: 24px;
+    height: 24px;
+    transition: fill 0.2s;
 }
 
-.insta-actions {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
+#playPauseBtn:hover svg {
+    fill: var(--accent-blue);
 }
 
-.insta-left-icons {
-    display: flex;
-    gap: 12px;
+/* Custom Seek Bar (টেনে কন্ট্রোল করার জন্য) */
+#videoSeek {
+    flex-grow: 1;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
 }
 
-.insta-icon svg {
-    fill: none;
-    stroke: #ffffff;
-    stroke-width: 2;
-    width: 22px;
-    height: 22px;
+#videoSeek::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent-blue);
+    cursor: pointer;
+    transition: transform 0.1s;
 }
 
-.insta-icon.liked svg {
-    fill: #ff3040;
-    stroke: #ff3040;
-}
-
-.insta-counters {
-    padding: 0 10px;
-    font-size: 13px;
-    font-weight: 600;
-    margin-bottom: 4px;
-}
-
-.insta-views { color: #00d2ff; margin-left: 5px; }
-
-.insta-content-box {
-    padding: 0 10px 10px;
-    font-size: 13px;
-    line-height: 1.4;
-}
-
-.insta-tags {
-    color: #73c2fb;
-    margin-top: 4px;
+#videoSeek::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
 }
 
 /* --- FOOTER --- */
@@ -486,6 +456,10 @@ footer {
             <img src="IMG-20260330-WA0118.jpg" alt="Fahim" class="profile-avatar-main">
         </div>
         <h1>Fahim Ahammad Mazumder</h1>
+        <div class="header-handle">
+            @fahimthesocial
+            <svg class="blue-tick" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        </div>
         <div class="tagline">No More Bosses, Growth Only!</div>
 
         <div class="header-socials">
@@ -570,55 +544,18 @@ footer {
         </div>
     </div>
 
-    <div class="insta-card">
-        <div class="insta-header">
-            <div class="insta-user-area">
-                <div class="insta-avatar">
-                    <img src="IMG-20260330-WA0118.jpg" alt="Profile">
-                </div>
-                <div>
-                    <div class="insta-name-wrapper">
-                        <span class="insta-main-name">fahimthesocial</span>
-                        <svg class="blue-tick" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                    </div>
-                    <span class="insta-location">Sajek Valley</span>
-                </div>
-            </div>
-            <div style="color:white; font-weight:bold;">•••</div>
-        </div>
+    <div class="custom-video-container">
+        <video id="portfolioVideo" src="https://youtu.be/4CwcubnQ3LU"></video>
         
-        <div class="insta-music-bar">🎵 Tanveer Evan • Ki Maya Je Tomay</div>
-
-        <div class="insta-image-container">
-            <div class="slide-badge" id="slideBadge">1/2</div>
-            <button class="slide-btn slide-prev" id="prevBtn">&#10094;</button>
-            <button class="slide-btn slide-next" id="nextBtn">&#10095;</button>
-            
-            <div class="insta-slides" id="imageSlides">
-                <img src="https://picsum.photos/400/400?random=1" alt="Insta Pic 1">
-                <img src="https://picsum.photos/400/400?random=2" alt="Insta Pic 2">
-            </div>
+        <div class="video-center-play" id="centerPlayBtn">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
         </div>
 
-        <div class="insta-actions">
-            <div class="insta-left-icons">
-                <div class="insta-icon liked">
-                    <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                </div>
-                <div class="insta-icon">
-                    <svg viewBox="0 0 24 24"><path d="M21.99 11.3c0-4.63-4.03-8.3-9-8.3s-9 3.67-9 8.3c0 2.57 1.25 4.88 3.23 6.43l-.8 2.92c-.1.37.27.7.63.53l3.24-1.54c.85.24 1.75.36 2.7.36 4.97 0 9-3.67 9-8.3z"/></svg>
-                </div>
-            </div>
-        </div>
-
-        <div class="insta-counters">
-            <span>10,412 likes</span>
-            <span class="insta-views">500k views</span>
-        </div>
-
-        <div class="insta-content-box">
-            <strong style="color:white;">fahimthesocial</strong> Stand at the peak and see how beautiful success truly looks. Lose yourself in the arms of nature...
-            <div class="insta-tags">#NaturePeaks #SuccessMindset #FahimTheSocial</div>
+        <div class="video-bottom-controls" id="bottomControls">
+            <button id="playPauseBtn">
+                <svg class="play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <input type="range" id="videoSeek" value="0" step="0.1">
         </div>
     </div>
 
@@ -633,58 +570,31 @@ footer {
 </div>
 
 <script>
-// --- INSTAGRAM SLIDER JS ---
-const slides = document.getElementById('imageSlides');
-const badge = document.getElementById('slideBadge');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-
-function showSlide(index) {
-    if(index === 0) {
-        slides.style.transform = 'translateX(0%)';
-        badge.innerText = '1/2';
-        prevBtn.style.display = 'none';
-        nextBtn.style.display = 'flex';
-    } else {
-        slides.style.transform = 'translateX(-50%)';
-        badge.innerText = '2/2';
-        prevBtn.style.display = 'flex';
-        nextBtn.style.display = 'none';
-    }
-}
-prevBtn.addEventListener('click', () => showSlide(0));
-nextBtn.addEventListener('click', () => showSlide(1));
-
 // --- SPOTIFY AUDIO PLAYER JS ---
 const audioPlayer = document.getElementById('globalSpotifyPlayer');
 let currentlyPlayingCard = null;
 
 function playSpotify(cardElement, audioUrl) {
-    // If clicking the same song that is playing, PAUSE it.
     if (currentlyPlayingCard === cardElement && !audioPlayer.paused) {
         audioPlayer.pause();
         cardElement.classList.remove('playing');
-        cardElement.querySelector('.play-svg').innerHTML = '<path d="M8 5v14l11-7z"/>'; // Play icon
+        cardElement.querySelector('.play-svg').innerHTML = '<path d="M8 5v14l11-7z"/>'; 
         return;
     }
 
-    // Reset all other cards
     document.querySelectorAll('.spotify-track-card').forEach(el => {
         el.classList.remove('playing');
         el.querySelector('.play-svg').innerHTML = '<path d="M8 5v14l11-7z"/>';
     });
 
-    // Play the new song
     audioPlayer.src = audioUrl;
     audioPlayer.play();
     
-    // UI Update for playing card
     cardElement.classList.add('playing');
-    cardElement.querySelector('.play-svg').innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>'; // Pause icon
+    cardElement.querySelector('.play-svg').innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>'; 
     currentlyPlayingCard = cardElement;
 }
 
-// When audio ends naturally, revert UI
 audioPlayer.addEventListener('ended', () => {
     if (currentlyPlayingCard) {
         currentlyPlayingCard.classList.remove('playing');
@@ -692,8 +602,62 @@ audioPlayer.addEventListener('ended', () => {
         currentlyPlayingCard = null;
     }
 });
+
+
+// --- CUSTOM VIDEO PLAYER JS ---
+const pfVideo = document.getElementById('portfolioVideo');
+const centerPlayBtn = document.getElementById('centerPlayBtn');
+const playPauseBtn = document.getElementById('playPauseBtn');
+const videoSeek = document.getElementById('videoSeek');
+const bottomControls = document.getElementById('bottomControls');
+
+const playIconSvg = '<path d="M8 5v14l11-7z"/>';
+const pauseIconSvg = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+
+function toggleVideoPlay() {
+    if (pfVideo.paused) {
+        pfVideo.play();
+        centerPlayBtn.style.display = 'none';
+        playPauseBtn.innerHTML = `<svg viewBox="0 0 24 24">${pauseIconSvg}</svg>`;
+        bottomControls.classList.add('active');
+    } else {
+        pfVideo.pause();
+        centerPlayBtn.style.display = 'flex';
+        playPauseBtn.innerHTML = `<svg viewBox="0 0 24 24">${playIconSvg}</svg>`;
+        bottomControls.classList.remove('active');
+    }
+}
+
+centerPlayBtn.addEventListener('click', toggleVideoPlay);
+playPauseBtn.addEventListener('click', toggleVideoPlay);
+pfVideo.addEventListener('click', toggleVideoPlay);
+
+// Update Range Slider when video plays
+pfVideo.addEventListener('timeupdate', () => {
+    if (!isNaN(pfVideo.duration)) {
+        const progress = (pfVideo.currentTime / pfVideo.duration) * 100;
+        videoSeek.value = progress;
+        // Dynamically style the scrub bar fill effect
+        videoSeek.style.background = `linear-gradient(to right, var(--accent-blue) ${progress}%, rgba(255,255,255,0.2) ${progress}%)`;
+    }
+});
+
+// Scrub functionality (টেনে কন্ট্রোল করা)
+videoSeek.addEventListener('input', (e) => {
+    if (!isNaN(pfVideo.duration)) {
+        const newTime = (e.target.value / 100) * pfVideo.duration;
+        pfVideo.currentTime = newTime;
+    }
+});
+
+pfVideo.addEventListener('ended', () => {
+    centerPlayBtn.style.display = 'flex';
+    playPauseBtn.innerHTML = `<svg viewBox="0 0 24 24">${playIconSvg}</svg>`;
+    bottomControls.classList.remove('active');
+    videoSeek.value = 0;
+    videoSeek.style.background = `rgba(255,255,255,0.2)`;
+});
 </script>
 
 </body>
 </html>
- 
