@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fahim Ahammad Mazumder | Digital Strategist & Entrepreneur</title>
+<title>Fahim Ahammad Mazumder | Elite Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -88,13 +88,25 @@ header h1 {
 
 .username {
     margin-top: 4px;
-    font-size: 13px;
+    font-size: 14px;
     color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
 }
 
 .username span {
     color: var(--accent-blue);
     font-weight: 600;
+}
+
+/* Official Blue Verified Badge Style */
+.blue-tick {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    fill: #0095f6;
 }
 
 .tagline {
@@ -379,6 +391,7 @@ header h1 {
     background: #1e293b;
 }
 
+/* Spotify List Layout: Stacked Vertically */
 .spotify-section {
     margin-bottom: 25px;
 }
@@ -398,37 +411,23 @@ header h1 {
     gap: 6px;
 }
 
-.spotify-row {
+.spotify-list {
     display: flex;
-    gap: 12px;
-    overflow-x: auto;
-    padding-bottom: 10px;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-}
-
-.spotify-row::-webkit-scrollbar {
-    height: 4px;
-}
-.spotify-row::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.01);
-}
-.spotify-row::-webkit-scrollbar-thumb {
-    background: var(--spotify-green);
-    border-radius: 10px;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .spotify-track-card {
-    flex: 0 0 220px;
+    width: 100%;
     background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    padding: 8px;
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 12px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: space-between;
     text-decoration: none;
-    transition: all 0.2s;
+    transition: all 0.2s ease;
 }
 
 .spotify-track-card:hover {
@@ -437,9 +436,16 @@ header h1 {
     transform: translateY(-2px);
 }
 
+.track-left-content {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    overflow: hidden;
+}
+
 .track-cover {
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
     border-radius: 8px;
     object-fit: cover;
     background: #222;
@@ -449,32 +455,33 @@ header h1 {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    white-space: nowrap;
-    flex-grow: 1;
 }
 
 .track-name {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 600;
     color: #ffffff;
+    white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
 }
 
 .track-artist-name {
-    font-size: 10px;
+    font-size: 11px;
     color: var(--text-muted);
-    margin-top: 1px;
+    margin-top: 2px;
+    white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
 }
 
 .spotify-play-icon svg {
     fill: var(--spotify-green);
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
 }
 
+/* Instagram Widget Style */
 .insta-card {
     background: #000000;
     border: 1px solid #262626;
@@ -518,6 +525,12 @@ header h1 {
 .insta-username-info {
     display: flex;
     flex-direction: column;
+}
+
+.insta-name-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .insta-main-name {
@@ -721,6 +734,7 @@ footer {
     text-align: center;
 }
 
+/* Fixed Order Based on Screenshot */
 .socials {
     display: flex;
     justify-content: center;
@@ -780,7 +794,8 @@ footer {
         </div>
         <h1>Fahim Ahammad Mazumder</h1>
         <div class="username">
-            <span>fahimthesocial 🔵</span>
+            <span>fahimthesocial</span>
+            <svg class="blue-tick" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
         </div>
         <div class="tagline">Strategize. Optimize. Achieve.</div>
 
@@ -854,28 +869,34 @@ footer {
                 Current Anthems
             </span>
         </div>
-        <div class="spotify-row">
+        <div class="spotify-list">
             <a href="#" class="spotify-track-card">
-                <img src="IMG-20260330-WA0118.jpg" class="track-cover" alt="You and Me">
-                <div class="track-details">
-                    <div class="track-name">You and Me</div>
-                    <div class="track-artist-name">Shubh</div>
+                <div class="track-left-content">
+                    <img src="IMG-20260330-WA0118.jpg" class="track-cover" alt="You and Me">
+                    <div class="track-details">
+                        <div class="track-name">You and Me</div>
+                        <div class="track-artist-name">Shubh</div>
+                    </div>
                 </div>
                 <div class="spotify-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
             </a>
             <a href="#" class="spotify-track-card">
-                <img src="IMG-20260330-WA0118.jpg" class="track-cover" alt="Millionaire">
-                <div class="track-details">
-                    <div class="track-name">Millionaire</div>
-                    <div class="track-artist-name">Yo Yo Honey Singh</div>
+                <div class="track-left-content">
+                    <img src="IMG-20260330-WA0118.jpg" class="track-cover" alt="Millionaire">
+                    <div class="track-details">
+                        <div class="track-name">Millionaire</div>
+                        <div class="track-artist-name">Yo Yo Honey Singh</div>
+                    </div>
                 </div>
                 <div class="spotify-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
             </a>
             <a href="#" class="spotify-track-card">
-                <img src="IMG-20260330-WA0118.jpg" class="track-cover" alt="Khasa Status">
-                <div class="track-details">
-                    <div class="track-name">Status (Khasa)</div>
-                    <div class="track-artist-name">Khasa Aala Chahar</div>
+                <div class="track-left-content">
+                    <img src="IMG-20260330-WA0118.jpg" class="track-cover" alt="Khasa Status">
+                    <div class="track-details">
+                        <div class="track-name">Status (Khasa)</div>
+                        <div class="track-artist-name">Khasa Aala Chahar</div>
+                    </div>
                 </div>
                 <div class="spotify-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
             </a>
@@ -889,7 +910,10 @@ footer {
                     <img src="IMG-20260330-WA0118.jpg" alt="Profile">
                 </div>
                 <div class="insta-username-info">
-                    <span class="insta-main-name">fahimthesocial</span>
+                    <div class="insta-name-wrapper">
+                        <span class="insta-main-name">fahimthesocial</span>
+                        <svg class="blue-tick" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    </div>
                     <span class="insta-location">Sajek Valley</span>
                 </div>
             </div>
@@ -976,13 +1000,11 @@ footer {
 </div>
 
 <script>
-// Fahix Dropdown Switch Logic
 function toggleBrandDropdown() {
     const dropdown = document.getElementById('fahixDropdown');
     dropdown.classList.toggle('active');
 }
 
-// Instagram Slide Control Logic
 const slides = document.getElementById('imageSlides');
 const badge = document.getElementById('slideBadge');
 const dot1 = document.getElementById('dot1');
@@ -990,4 +1012,64 @@ const dot2 = document.getElementById('dot2');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 
-function
+function showSlide(index) {
+    if(index === 0) {
+        slides.style.transform = 'translateX(0%)';
+        badge.innerText = '1/2';
+        dot1.classList.add('active');
+        dot2.classList.remove('active');
+        prevBtn.style.display = 'none';
+        nextBtn.style.display = 'flex';
+    } else {
+        slides.style.transform = 'translateX(-50%)';
+        badge.innerText = '2/2';
+        dot1.classList.remove('active');
+        dot2.classList.add('active');
+        prevBtn.style.display = 'flex';
+        nextBtn.style.display = 'none';
+    }
+}
+prevBtn.addEventListener('click', () => showSlide(0));
+nextBtn.addEventListener('click', () => showSlide(1));
+
+// Audio Control Fixed
+const audio = document.getElementById('instaAudio');
+const audioBtn = document.getElementById('audioToggleBtn');
+const muteSlash = document.getElementById('muteSlash');
+let isUserMuted = true; 
+
+// Initial condition configuration
+audio.muted = true;
+
+audioBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (isUserMuted) {
+        audio.muted = false;
+        isUserMuted = false;
+        audio.play().catch(err => console.log("Playback interaction system caught", err));
+        muteSlash.style.display = 'none'; 
+    } else {
+        audio.muted = true;
+        isUserMuted = true;
+        audio.pause();
+        muteSlash.style.display = 'inline'; 
+    }
+});
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            if (!isUserMuted) {
+                audio.play().catch(() => {});
+            }
+        } else {
+            audio.pause();
+        }
+    });
+}, { root: null, threshold: 0.5 });
+
+observer.observe(document.getElementById('myInstaPost'));
+</script>
+
+</body>
+</html>
