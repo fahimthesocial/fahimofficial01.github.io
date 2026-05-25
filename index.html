@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Fahim Ahammad Mazumder | Elite Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,7 +13,6 @@
     --card-bg: rgba(255, 255, 255, 0.03);
     --card-border: rgba(255, 255, 255, 0.08);
     --accent-blue: #00d2ff;
-    --accent-blue-hover: #3a7bd5;
     --spotify-green: #1DB954;
     --text-main: #ffffff;
     --text-muted: #94a3b8;
@@ -27,39 +26,29 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: var(--bg-gradient);
+    background: #000000; /* Deep black background like Hussam Ansari */
     color: var(--text-main);
     min-height: 100vh;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
     overflow-x: hidden;
 }
 
 .main-wrapper {
     max-width: 470px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 15px;
 }
 
+/* --- HEADER SECTION --- */
 header {
     text-align: center;
-    padding: 30px 10px 15px;
+    padding: 20px 5px 15px;
 }
 
 .profile-avatar-container {
-    position: relative;
-    width: 110px;
-    height: 110px;
-    margin: 0 auto 15px;
-}
-
-.profile-avatar-container::before {
-    content: '';
-    position: absolute;
-    inset: -3px;
-    border-radius: 50%;
-    background: linear-gradient(45deg, var(--accent-blue), #3a7bd5, var(--spotify-green));
-    z-index: 1;
-    animation: rotateGradient 6s linear infinite;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 12px;
 }
 
 .profile-avatar-main {
@@ -67,228 +56,60 @@ header {
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    position: relative;
-    z-index: 2;
-    border: 3px solid #070a13;
-}
-
-@keyframes rotateGradient {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    border: 2px solid #333;
 }
 
 header h1 {
-    font-size: 24px;
-    font-weight: 800;
-    background: linear-gradient(90deg, #00d2ff, #3a7bd5);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: -0.5px;
-}
-
-.username {
-    margin-top: 4px;
-    font-size: 14px;
-    color: var(--text-muted);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-}
-
-.username span {
-    color: var(--accent-blue);
-    font-weight: 600;
-}
-
-/* Official Blue Verified Badge Style */
-.blue-tick {
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    fill: #0095f6;
+    font-size: 20px; /* Adjusted to fit in one line */
+    font-weight: 700;
+    color: #ffffff;
+    white-space: nowrap; /* Forces text to stay in one line */
+    letter-spacing: -0.3px;
 }
 
 .tagline {
     font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--text-muted);
-    margin: 8px 0 12px;
+    color: #e2e8f0;
+    margin: 6px 0 15px;
     font-weight: 500;
 }
 
-.brand-dropdown {
-    background: rgba(0, 210, 255, 0.06);
-    border: 1px solid rgba(0, 210, 255, 0.2);
-    border-radius: 16px;
-    margin: 10px 0 20px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.brand-trigger {
-    width: 100%;
-    padding: 12px 16px;
-    background: transparent;
-    border: none;
-    color: var(--text-main);
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
+/* --- SOCIAL ICONS IN HEADER --- */
+.header-socials {
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-}
-
-.brand-trigger .left-side {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.brand-trigger .left-side .live-dot {
-    width: 8px;
-    height: 8px;
-    background: #10b981;
-    border-radius: 50%;
-    box-shadow: 0 0 8px #10b981;
-}
-
-.brand-trigger .arrow-icon {
-    transition: transform 0.3s ease;
-    fill: var(--text-main);
-}
-
-.brand-dropdown.active .arrow-icon {
-    transform: rotate(180deg);
-}
-
-.brand-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out, padding 0.3s ease;
-    padding: 0 16px;
-    text-align: left;
-    background: rgba(0, 0, 0, 0.2);
-}
-
-.brand-dropdown.active .brand-content {
-    max-height: 220px;
-    padding: 0 16px 16px;
-    border-top: 1px solid rgba(0, 210, 255, 0.1);
-}
-
-.brand-content p {
-    font-size: 12px;
-    color: var(--text-muted);
-    line-height: 1.5;
-    margin: 10px 0 12px;
-}
-
-.brand-links-row {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.brand-url-btn {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 8px 12px;
-    border-radius: 8px;
-    color: var(--accent-blue);
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 500;
-    transition: background 0.2s;
-}
-
-.brand-url-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.brand-url-btn span {
-    color: var(--text-main);
-}
-
-.profile-info-card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 25px;
-    backdrop-filter: blur(10px);
-}
-
-.info-section-title {
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--accent-blue);
-    margin-bottom: 10px;
-    font-weight: 700;
-}
-
-.about-text {
-    font-size: 13px;
-    color: #cbd5e1;
-    line-height: 1.6;
-    margin-bottom: 18px;
-}
-
-.edu-timeline {
-    border-left: 2px solid rgba(255, 255, 255, 0.1);
-    padding-left: 14px;
-    margin-bottom: 18px;
-}
-
-.edu-item h4 {
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.edu-item p {
-    font-size: 12px;
-    color: var(--text-muted);
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-}
-
-.skill-tag {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    padding: 8px 12px;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.bio-links-area {
+    gap: 18px;
     margin-bottom: 25px;
 }
 
+.header-socials a {
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+.header-socials a:hover {
+    transform: scale(1.1);
+}
+
+.header-socials img {
+    width: 22px;
+    height: 22px;
+    filter: invert(1); /* Makes black icons white */
+}
+
+/* --- HUSSAM ANSARI STYLE BUTTONS --- */
 .capsule-card-white {
     background: #ffffff;
     color: #000000;
-    border-radius: 35px;
-    padding: 14px 18px;
+    border-radius: 30px;
+    padding: 12px 16px;
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 14px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    margin-bottom: 20px;
     text-decoration: none;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.2s;
 }
 
 .capsule-card-white:hover {
@@ -296,45 +117,43 @@ header h1 {
 }
 
 .capsule-icon-area {
-    width: 44px;
-    height: 44px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     background: #000000;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    font-weight: 800;
-    font-size: 10px;
+    font-weight: 700;
+    font-size: 12px;
     color: #ffffff;
-    border: 2px solid var(--accent-blue);
-    letter-spacing: 0.5px;
 }
 
 .capsule-text-area {
     flex-grow: 1;
     text-align: center;
-    padding-right: 24px;
+    padding-right: 20px;
 }
 
 .capsule-main-title {
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.3;
 }
 
 .capsule-sub-title {
     font-size: 11px;
-    color: #475569;
-    margin-top: 2px;
+    color: #333;
+    margin-top: 3px;
 }
 
 .section-divider-title {
     text-align: center;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
     color: var(--text-main);
-    margin: 25px 0 12px;
+    margin: 30px 0 15px;
 }
 
 .split-card-white {
@@ -343,9 +162,8 @@ header h1 {
     border-radius: 20px;
     display: flex;
     overflow: hidden;
-    margin-bottom: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-    height: 140px;
+    margin-bottom: 25px;
+    height: 130px;
 }
 
 .split-img-side {
@@ -355,21 +173,22 @@ header h1 {
 
 .split-content-side {
     width: 60%;
-    padding: 14px;
+    padding: 12px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 8px;
 }
 
 .split-card-title {
     font-size: 13px;
     font-weight: 700;
-    line-height: 1.4;
+    line-height: 1.3;
 }
 
 .split-card-meta {
-    font-size: 11px;
-    color: #64748b;
+    font-size: 12px;
+    color: #444;
     display: flex;
     align-items: center;
     gap: 4px;
@@ -379,19 +198,15 @@ header h1 {
     background: #000000;
     color: #ffffff;
     border-radius: 50px;
-    padding: 8px 16px;
+    padding: 8px 12px;
     font-size: 12px;
     font-weight: 600;
     text-align: center;
     text-decoration: none;
-    transition: background 0.2s;
+    margin-top: 5px;
 }
 
-.split-card-btn:hover {
-    background: #1e293b;
-}
-
-/* Spotify List Layout: Stacked Vertically */
+/* --- SPOTIFY SECTION --- */
 .spotify-section {
     margin-bottom: 25px;
 }
@@ -400,6 +215,7 @@ header h1 {
     display: flex;
     align-items: center;
     margin-bottom: 12px;
+    padding-left: 5px;
 }
 
 .spotify-logo-text {
@@ -418,76 +234,64 @@ header h1 {
 }
 
 .spotify-track-card {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--card-border);
-    border-radius: 14px;
-    padding: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 10px 12px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    text-decoration: none;
-    transition: all 0.2s ease;
+    cursor: pointer;
+    transition: background 0.2s;
 }
 
-.spotify-track-card:hover {
-    background: rgba(29, 185, 84, 0.08);
+.spotify-track-card.playing {
     border-color: var(--spotify-green);
-    transform: translateY(-2px);
+    background: rgba(29, 185, 84, 0.1);
 }
 
 .track-left-content {
     display: flex;
     align-items: center;
-    gap: 14px;
-    overflow: hidden;
+    gap: 12px;
 }
 
 .track-cover {
-    width: 48px;
-    height: 48px;
-    border-radius: 8px;
+    width: 45px;
+    height: 45px;
+    border-radius: 6px;
     object-fit: cover;
-    background: #222;
 }
 
 .track-details {
     display: flex;
     flex-direction: column;
-    overflow: hidden;
 }
 
 .track-name {
     font-size: 13px;
     font-weight: 600;
     color: #ffffff;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
 }
 
 .track-artist-name {
     font-size: 11px;
     color: var(--text-muted);
     margin-top: 2px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
 }
 
 .spotify-play-icon svg {
     fill: var(--spotify-green);
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
 }
 
-/* Instagram Widget Style */
+/* --- INSTAGRAM WIDGET --- */
 .insta-card {
     background: #000000;
     border: 1px solid #262626;
     border-radius: 12px;
     width: 100%;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
     overflow: hidden;
     margin-bottom: 25px;
 }
@@ -496,8 +300,7 @@ header h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px;
-    border-bottom: 1px solid #121212;
+    padding: 10px;
 }
 
 .insta-user-area {
@@ -507,10 +310,10 @@ header h1 {
 }
 
 .insta-avatar {
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
     padding: 1.5px;
 }
 
@@ -520,11 +323,6 @@ header h1 {
     border-radius: 50%;
     object-fit: cover;
     background: #000;
-}
-
-.insta-username-info {
-    display: flex;
-    flex-direction: column;
 }
 
 .insta-name-wrapper {
@@ -539,31 +337,22 @@ header h1 {
     color: #ffffff;
 }
 
+.blue-tick {
+    width: 14px;
+    height: 14px;
+    fill: #0095f6;
+}
+
 .insta-location {
     font-size: 10px;
     color: #a8a8a8;
-}
-
-.insta-more-btn {
-    color: #ffffff;
-    cursor: pointer;
-    font-weight: bold;
+    display: block;
 }
 
 .insta-music-bar {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 2px 12px 8px;
+    padding: 0 10px 8px;
     font-size: 11px;
     color: #a8a8a8;
-}
-
-.insta-music-bar span {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 85%;
 }
 
 .insta-image-container {
@@ -591,77 +380,50 @@ header h1 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.7);
     border: none;
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     cursor: pointer;
+    z-index: 5;
+    font-size: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
-    color: #000;
-    z-index: 5;
-    font-size: 11px;
 }
 .slide-prev { left: 10px; display: none; }
 .slide-next { right: 10px; }
 
 .slide-badge {
     position: absolute;
-    top: 12px;
-    right: 12px;
-    background: rgba(18, 18, 18, 0.75);
-    color: #f5f5f5;
-    padding: 3px 6px;
-    border-radius: 10px;
-    font-size: 11px;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 10px;
     z-index: 4;
-}
-
-.insta-audio-ctrl {
-    position: absolute;
-    bottom: 12px;
-    right: 12px;
-    background: rgba(18, 18, 18, 0.8);
-    border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 4;
-}
-
-.insta-audio-ctrl svg {
-    width: 14px;
-    height: 14px;
-    fill: #ffffff;
 }
 
 .insta-actions {
     display: flex;
     justify-content: space-between;
-    padding: 10px 12px 4px;
+    padding: 10px;
 }
 
 .insta-left-icons {
     display: flex;
-    gap: 14px;
-    align-items: center;
-}
-
-.insta-icon {
-    cursor: pointer;
+    gap: 12px;
 }
 
 .insta-icon svg {
     fill: none;
     stroke: #ffffff;
     stroke-width: 2;
+    width: 22px;
+    height: 22px;
 }
 
 .insta-icon.liked svg {
@@ -669,56 +431,19 @@ header h1 {
     stroke: #ff3040;
 }
 
-.insta-dots {
-    display: flex;
-    gap: 4px;
-    align-items: center;
-}
-
-.insta-dot {
-    width: 5px;
-    height: 5px;
-    background: #a8a8a8;
-    border-radius: 50%;
-}
-
-.insta-dot.active {
-    background: #0095f6;
-}
-
 .insta-counters {
-    padding: 0 12px;
+    padding: 0 10px;
     font-size: 13px;
     font-weight: 600;
     margin-bottom: 4px;
-    display: flex;
-    gap: 12px;
 }
 
-.insta-views {
-    color: var(--accent-blue);
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.insta-views svg {
-    fill: var(--accent-blue);
-}
+.insta-views { color: #00d2ff; margin-left: 5px; }
 
 .insta-content-box {
-    padding: 0 12px 12px;
+    padding: 0 10px 10px;
     font-size: 13px;
-    line-height: 1.5;
-}
-
-.insta-caption-text {
-    color: #f5f5f5;
-}
-
-.insta-caption-text strong {
-    color: #ffffff;
-    margin-right: 4px;
+    line-height: 1.4;
 }
 
 .insta-tags {
@@ -726,60 +451,28 @@ header h1 {
     margin-top: 4px;
 }
 
+/* --- FOOTER --- */
 footer {
-    margin-top: 15px;
-    padding: 25px 10px;
-    background: rgba(255, 255, 255, 0.01);
-    border-top: 1px solid rgba(255, 255, 255, 0.04);
     text-align: center;
-}
-
-/* Fixed Order Based on Screenshot */
-.socials {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 20px;
-}
-
-.socials a {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #151f32;
-    transition: 0.3s;
-}
-
-.socials img {
-    width: 18px;
-    filter: invert(1);
-}
-
-.socials a:hover {
-    background: var(--accent-blue-hover);
-    transform: translateY(-4px);
-    box-shadow: 0 6px 15px rgba(58, 123, 213, 0.4);
+    padding-top: 15px;
+    border-top: 1px solid #1a1a1a;
 }
 
 .footer-emails {
-    font-size: 12px;
-    color: var(--text-muted);
+    font-size: 11px;
+    color: #888;
     line-height: 1.6;
 }
 
 .footer-emails a {
-    color: var(--accent-blue);
+    color: #00d2ff;
     text-decoration: none;
 }
 
 .footer-copy {
-    margin-top: 10px;
-    font-size: 11px;
-    color: #475569;
+    margin-top: 8px;
+    font-size: 10px;
+    color: #555;
 }
 </style>
 </head>
@@ -790,75 +483,38 @@ footer {
 
     <header>
         <div class="profile-avatar-container">
-            <img src="IMG-20260330-WA0118.jpg" alt="Fahim Ahammad Mazumder" class="profile-avatar-main">
+            <img src="IMG-20260330-WA0118.jpg" alt="Fahim" class="profile-avatar-main">
         </div>
         <h1>Fahim Ahammad Mazumder</h1>
-        <div class="username">
-            <span>fahimthesocial</span>
-            <svg class="blue-tick" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-        </div>
-        <div class="tagline">Strategize. Optimize. Achieve.</div>
+        <div class="tagline">No More Bosses, Growth Only!</div>
 
-        <div class="brand-dropdown" id="fahixDropdown">
-            <button class="brand-trigger" onclick="toggleBrandDropdown()">
-                <div class="left-side">
-                    <div class="live-dot"></div>
-                    <span>Founder of Fahix</span>
-                </div>
-                <svg class="arrow-icon" width="12" height="12" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
-            </button>
-            <div class="brand-content">
-                <p>Global Supply Chain Ecosystem & Performance Digital Infrastructure Solutions.</p>
-                <div class="brand-links-row">
-                    <a href="https://fahix.com" target="_blank" class="brand-url-btn">🌐 Website <span>fahix.com</span></a>
-                    <a href="https://instagram.com/fahixbd" target="_blank" class="brand-url-btn">📸 Instagram <span>@fahixbd</span></a>
-                    <a href="https://instagram.com/fahixofficial" target="_blank" class="brand-url-btn">💼 Brand Global <span>@fahixofficial</span></a>
-                </div>
-            </div>
+        <div class="header-socials">
+            <a href="https://tiktok.com/@fahimthesocial"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok"></a>
+            <a href="https://instagram.com/iamfahimofficial"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
+            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
+            <a href="https://facebook.com/iamfahimofficial.old"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+            <a href="https://x.com/xfahimofficial"><img src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png" alt="X"></a>
+            <a href="https://linkedin.com/in/iamfahimofficial"><img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn"></a>
+            <a href="https://wa.me/8801317621530"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
         </div>
     </header>
 
-    <div class="profile-info-card">
-        <div class="info-section-title">About Me</div>
-        <div class="about-text">
-            Passionate digital strategist and tech entrepreneur. Over the last 2 years, specializing in performance marketing architecture, digital brand scalability, web infrastructure, and complex technology problem-solving framework.
+    <a href="https://support.fahix.com" class="capsule-card-white">
+        <div class="capsule-icon-area">FAHIX</div>
+        <div class="capsule-text-area">
+            <div class="capsule-main-title">Apply For Fahix System Accelerator</div>
+            <div class="capsule-sub-title">LIVE Training Program + Exclusive Bonuses</div>
         </div>
+    </a>
 
-        <div class="info-section-title">Academic Architecture</div>
-        <div class="edu-timeline">
-            <div class="edu-item">
-                <h4>Diploma in Computer Science & Engineering (CSE)</h4>
-                <p>Chattogram Govt Polytechnic Institute (2025 - 2026)</p>
-            </div>
-        </div>
+    <div class="section-divider-title">Consultation Call with Fahim</div>
 
-        <div class="info-section-title">Expertise Architecture</div>
-        <div class="skills-grid">
-            <div class="skill-tag">🛠️ Problem Solving</div>
-            <div class="skill-tag">💻 Web Development</div>
-            <div class="skill-tag">🚀 Digital Marketing</div>
-            <div class="skill-tag">📈 Brand Scalability</div>
-        </div>
-    </div>
-
-    <div class="bio-links-area">
-        <a href="https://support.fahix.com" class="capsule-card-white" target="_blank">
-            <div class="capsule-icon-area">FAHIX</div>
-            <div class="capsule-text-area">
-                <div class="capsule-main-title">Apply For Fahix System Accelerator</div>
-                <div class="capsule-sub-title">Premium Scale Live Training + Exclusive Bonuses</div>
-            </div>
-        </a>
-
-        <div class="section-divider-title">Strategic Consultations</div>
-
-        <div class="split-card-white">
-            <img src="IMG-20260330-WA0118.jpg" alt="Coaching Session" class="split-img-side">
-            <div class="split-content-side">
-                <div class="split-card-title">Personalized Strategy Consultation Call</div>
-                <div class="split-card-meta">⏱️ <span>45-Min Private Session</span></div>
-                <a href="https://wa.me/8801317621530" class="split-card-btn" target="_blank">Book Session Now</a>
-            </div>
+    <div class="split-card-white">
+        <img src="IMG-20260330-WA0118.jpg" alt="Coaching" class="split-img-side">
+        <div class="split-content-side">
+            <div class="split-card-title">Personalized Coaching Call (45-Minute Strategy Session)</div>
+            <div class="split-card-meta">⏱️ 45min</div>
+            <a href="https://wa.me/8801317621530" class="split-card-btn">Book Now</a>
         </div>
     </div>
 
@@ -869,47 +525,58 @@ footer {
                 Current Anthems
             </span>
         </div>
+        
+        <audio id="globalSpotifyPlayer" src=""></audio>
+
         <div class="spotify-list">
-            <a href="#" class="spotify-track-card">
+            <div class="spotify-track-card" onclick="playSpotify(this, 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3')">
                 <div class="track-left-content">
-                    <img src="IMG-20260330-WA0118.jpg" class="track-cover" alt="You and Me">
+                    <img src="https://picsum.photos/100/100?random=10" class="track-cover" alt="Cover 1">
                     <div class="track-details">
                         <div class="track-name">You and Me</div>
                         <div class="track-artist-name">Shubh</div>
                     </div>
                 </div>
-                <div class="spotify-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-            </a>
-            <a href="#" class="spotify-track-card">
+                <div class="spotify-play-icon">
+                    <svg class="play-svg" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+            </div>
+            
+            <div class="spotify-track-card" onclick="playSpotify(this, 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3')">
                 <div class="track-left-content">
-                    <img src="IMG-20260330-WA0118.jpg" class="track-cover" alt="Millionaire">
+                    <img src="https://picsum.photos/100/100?random=11" class="track-cover" alt="Cover 2">
                     <div class="track-details">
                         <div class="track-name">Millionaire</div>
                         <div class="track-artist-name">Yo Yo Honey Singh</div>
                     </div>
                 </div>
-                <div class="spotify-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-            </a>
-            <a href="#" class="spotify-track-card">
+                <div class="spotify-play-icon">
+                    <svg class="play-svg" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+            </div>
+
+            <div class="spotify-track-card" onclick="playSpotify(this, 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3')">
                 <div class="track-left-content">
-                    <img src="IMG-20260330-WA0118.jpg" class="track-cover" alt="Khasa Status">
+                    <img src="https://picsum.photos/100/100?random=12" class="track-cover" alt="Cover 3">
                     <div class="track-details">
                         <div class="track-name">Status (Khasa)</div>
                         <div class="track-artist-name">Khasa Aala Chahar</div>
                     </div>
                 </div>
-                <div class="spotify-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-            </a>
+                <div class="spotify-play-icon">
+                    <svg class="play-svg" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="insta-card" id="myInstaPost">
+    <div class="insta-card">
         <div class="insta-header">
             <div class="insta-user-area">
                 <div class="insta-avatar">
                     <img src="IMG-20260330-WA0118.jpg" alt="Profile">
                 </div>
-                <div class="insta-username-info">
+                <div>
                     <div class="insta-name-wrapper">
                         <span class="insta-main-name">fahimthesocial</span>
                         <svg class="blue-tick" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
@@ -917,12 +584,10 @@ footer {
                     <span class="insta-location">Sajek Valley</span>
                 </div>
             </div>
-            <div class="insta-more-btn">•••</div>
+            <div style="color:white; font-weight:bold;">•••</div>
         </div>
         
-        <div class="insta-music-bar">
-            🎵 <span>Tanveer Evan • Ki Maya Je Tomay</span>
-        </div>
+        <div class="insta-music-bar">🎵 Tanveer Evan • Ki Maya Je Tomay</div>
 
         <div class="insta-image-container">
             <div class="slide-badge" id="slideBadge">1/2</div>
@@ -930,36 +595,20 @@ footer {
             <button class="slide-btn slide-next" id="nextBtn">&#10095;</button>
             
             <div class="insta-slides" id="imageSlides">
-                <img src="IMG-20260330-WA0118.jpg" alt="Photo 1">
-                <img src="IMG-20260330-WA0118.jpg" alt="Photo 2">
+                <img src="https://picsum.photos/400/400?random=1" alt="Insta Pic 1">
+                <img src="https://picsum.photos/400/400?random=2" alt="Insta Pic 2">
             </div>
-
-            <button class="insta-audio-ctrl" id="audioToggleBtn">
-                <svg id="speakerIcon" viewBox="0 0 24 24">
-                    <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM5 9v6h4l5 5V4L9 9H5zm13.5 3c0 2.45-1.39 4.57-3.41 5.63v2.07c3.14-1.3 5.41-4.43 5.41-8.1s-2.27-6.8-5.41-8.1v2.07c2.02 1.06 3.41 3.18 3.41 5.63z"/>
-                    <path id="muteSlash" d="M4.27 3L3 4.27 7.73 9H5v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM14 4L11.41 6.59 14 9.17V4zm2.5 8c0-.36-.05-.71-.13-1.05l1.52 1.52c.07-.15.11-.31.11-.47z" style="display:inline;"/>
-                </svg>
-            </button>
         </div>
-
-        <audio id="instaAudio" loop>
-            <source src="Shubh_-_You_and_Me__Official_Audio_(48k).m4a" type="audio/mp4">
-        </audio>
 
         <div class="insta-actions">
             <div class="insta-left-icons">
                 <div class="insta-icon liked">
-                    <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
                 </div>
                 <div class="insta-icon">
-                    <svg viewBox="0 0 24 24" width="22" height="22"><path d="M21.99 11.3c0-4.63-4.03-8.3-9-8.3s-9 3.67-9 8.3c0 2.57 1.25 4.88 3.23 6.43l-.8 2.92c-.1.37.27.7.63.53l3.24-1.54c.85.24 1.75.36 2.7.36 4.97 0 9-3.67 9-8.3z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M21.99 11.3c0-4.63-4.03-8.3-9-8.3s-9 3.67-9 8.3c0 2.57 1.25 4.88 3.23 6.43l-.8 2.92c-.1.37.27.7.63.53l3.24-1.54c.85.24 1.75.36 2.7.36 4.97 0 9-3.67 9-8.3z"/></svg>
                 </div>
             </div>
-            <div class="insta-dots">
-                <div class="insta-dot active" id="dot1"></div>
-                <div class="insta-dot" id="dot2"></div>
-            </div>
-            <div style="width:24px;"></div>
         </div>
 
         <div class="insta-counters">
@@ -968,47 +617,25 @@ footer {
         </div>
 
         <div class="insta-content-box">
-            <div class="insta-caption-text">
-                <strong>fahimthesocial</strong> Stand at the peak and see how beautiful success truly looks. Lose yourself in the arms of nature, and watch your wildest dreams turn into reality. 🌄
-                <div class="insta-tags">
-                #NaturePeaks #SuccessMindset #FahimTheSocial #FahimOfficial #GlobalVibes
-                </div>
-            </div>
+            <strong style="color:white;">fahimthesocial</strong> Stand at the peak and see how beautiful success truly looks. Lose yourself in the arms of nature...
+            <div class="insta-tags">#NaturePeaks #SuccessMindset #FahimTheSocial</div>
         </div>
     </div>
 
     <footer>
-        <div class="socials">
-            <a href="https://facebook.com/iamfahimofficial.old" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
-            <a href="https://instagram.com/iamfahimofficial" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
-            <a href="https://tiktok.com/@fahimthesocial" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok"></a>
-            <a href="https://github.com/fahimthesocial" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub"></a>
-            <a href="https://linkedin.com/in/iamfahimofficial" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn"></a>
-            <a href="https://x.com/xfahimofficial" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png" alt="X"></a>
-            <a href="https://wa.me/8801317621530" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
-        </div>
-
         <div class="footer-emails">
             General Corporate: <a href="mailto:info@fahimofficial.com">info@fahimofficial.com</a><br>
             Enterprise Support: <a href="mailto:support@fahix.com">support@fahix.com</a>
         </div>
-        <div class="footer-copy">
-            © Fahim Official • 2026 • Chattogram, Bangladesh
-        </div>
+        <div class="footer-copy">© Fahim Official • 2026</div>
     </footer>
 
 </div>
 
 <script>
-function toggleBrandDropdown() {
-    const dropdown = document.getElementById('fahixDropdown');
-    dropdown.classList.toggle('active');
-}
-
+// --- INSTAGRAM SLIDER JS ---
 const slides = document.getElementById('imageSlides');
 const badge = document.getElementById('slideBadge');
-const dot1 = document.getElementById('dot1');
-const dot2 = document.getElementById('dot2');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 
@@ -1016,15 +643,11 @@ function showSlide(index) {
     if(index === 0) {
         slides.style.transform = 'translateX(0%)';
         badge.innerText = '1/2';
-        dot1.classList.add('active');
-        dot2.classList.remove('active');
         prevBtn.style.display = 'none';
         nextBtn.style.display = 'flex';
     } else {
         slides.style.transform = 'translateX(-50%)';
         badge.innerText = '2/2';
-        dot1.classList.remove('active');
-        dot2.classList.add('active');
         prevBtn.style.display = 'flex';
         nextBtn.style.display = 'none';
     }
@@ -1032,44 +655,45 @@ function showSlide(index) {
 prevBtn.addEventListener('click', () => showSlide(0));
 nextBtn.addEventListener('click', () => showSlide(1));
 
-// Audio Control Fixed
-const audio = document.getElementById('instaAudio');
-const audioBtn = document.getElementById('audioToggleBtn');
-const muteSlash = document.getElementById('muteSlash');
-let isUserMuted = true; 
+// --- SPOTIFY AUDIO PLAYER JS ---
+const audioPlayer = document.getElementById('globalSpotifyPlayer');
+let currentlyPlayingCard = null;
 
-// Initial condition configuration
-audio.muted = true;
+function playSpotify(cardElement, audioUrl) {
+    // If clicking the same song that is playing, PAUSE it.
+    if (currentlyPlayingCard === cardElement && !audioPlayer.paused) {
+        audioPlayer.pause();
+        cardElement.classList.remove('playing');
+        cardElement.querySelector('.play-svg').innerHTML = '<path d="M8 5v14l11-7z"/>'; // Play icon
+        return;
+    }
 
-audioBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    if (isUserMuted) {
-        audio.muted = false;
-        isUserMuted = false;
-        audio.play().catch(err => console.log("Playback interaction system caught", err));
-        muteSlash.style.display = 'none'; 
-    } else {
-        audio.muted = true;
-        isUserMuted = true;
-        audio.pause();
-        muteSlash.style.display = 'inline'; 
+    // Reset all other cards
+    document.querySelectorAll('.spotify-track-card').forEach(el => {
+        el.classList.remove('playing');
+        el.querySelector('.play-svg').innerHTML = '<path d="M8 5v14l11-7z"/>';
+    });
+
+    // Play the new song
+    audioPlayer.src = audioUrl;
+    audioPlayer.play();
+    
+    // UI Update for playing card
+    cardElement.classList.add('playing');
+    cardElement.querySelector('.play-svg').innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>'; // Pause icon
+    currentlyPlayingCard = cardElement;
+}
+
+// When audio ends naturally, revert UI
+audioPlayer.addEventListener('ended', () => {
+    if (currentlyPlayingCard) {
+        currentlyPlayingCard.classList.remove('playing');
+        currentlyPlayingCard.querySelector('.play-svg').innerHTML = '<path d="M8 5v14l11-7z"/>';
+        currentlyPlayingCard = null;
     }
 });
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            if (!isUserMuted) {
-                audio.play().catch(() => {});
-            }
-        } else {
-            audio.pause();
-        }
-    });
-}, { root: null, threshold: 0.5 });
-
-observer.observe(document.getElementById('myInstaPost'));
 </script>
 
 </body>
 </html>
+ 
