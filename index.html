@@ -54,7 +54,7 @@ header {
     padding: 20px 5px 15px;
 }
 
-/* PROFILE PHOTO */
+/* PROFILE PHOTO ADJUSTMENT */
 
 .profile-avatar-container {
     width: 90px;
@@ -63,6 +63,7 @@ header {
     border-radius: 50%;
     overflow: hidden;
     background: #111827;
+    border: 2px solid #333;
 }
 
 .profile-avatar-main {
@@ -70,15 +71,14 @@ header {
     height: 100%;
     border-radius: 50%;
 
-    /*
-       contain ব্যবহার করা হয়েছে যাতে ছবির
-       দুই পাশ আর crop না হয়।
-    */
-    object-fit: contain;
-    object-position: center;
+    /* contain পরিবর্তন করে cover করা হয়েছে */
+    object-fit: cover;
+    object-position: center 20%; /* পজিশন অ্যাডজাস্ট করা হয়েছে */
+
+    /* ফটো জুম করার জন্য scale ব্যবহার করা হয়েছে (প্রয়োজনে ১.৪ বাড়িয়ে/কমিয়ে নিতে পারেন) */
+    transform: scale(1.4);
 
     background: #111827;
-    border: 2px solid #333;
     display: block;
 }
 
@@ -94,9 +94,6 @@ header h1 {
 
     margin-bottom: 4px;
 
-    /*
-       নাম এক লাইনে থাকবে
-    */
     white-space: nowrap;
     text-align: center;
 }
@@ -263,10 +260,6 @@ header h1 {
 }
 
 .about-content.active {
-    /*
-       আগের 250px-এর বদলে বেশি রাখা হয়েছে
-       যাতে সব information comfortably দেখা যায়।
-    */
     max-height: 420px;
 
     opacity: 1;
@@ -295,12 +288,6 @@ header h1 {
 
     text-align: left;
 }
-
-/*
-   প্রতিটি তথ্য আলাদা serial line-এ থাকবে।
-   ফলে browser নিজের মতো করে এলোমেলোভাবে
-   line break করবে না।
-*/
 
 .about-line {
     display: block;
@@ -1020,7 +1007,7 @@ footer {
         <!-- TAGLINE -->
 
         <div class="tagline">
-            No More Bosses, Growth Only!
+            Never Give Up! 
         </div>
 
 
@@ -1174,7 +1161,7 @@ footer {
                     </div>
 
                     <div class="about-subtitle">
-                        Founder &amp; CEO · FX Group
+                        Founder &amp; CEO · FX Group LLC
                     </div>
 
                 </div>
@@ -1213,7 +1200,7 @@ footer {
 
                     <span class="about-line">
                         <strong>Founder &amp; CEO</strong> of
-                        <span class="about-company">FX Group</span>,
+                        <span class="about-company">FX Group LLC</span>,
                     </span>
 
                     <span class="about-line">
@@ -1226,7 +1213,7 @@ footer {
                     </span>
 
                     <span class="about-line">
-                        and <strong>FX Jute, FX Leather, FX Handicraft, etc.</strong>
+                        and <strong>FX Jute, FX Leather, FX Handicraft & etc.</strong>
                     </span>
 
                     <span class="about-line">
@@ -1336,7 +1323,7 @@ footer {
                 <div class="education-content">
 
                     <div class="education-title">
-                        SSC 2023–2024 · Computer Science &amp; IT
+                        SSC · Session 2023 · Computer Science Fundamental&amp; IT
                     </div>
 
                     <div class="education-meta">
@@ -1363,7 +1350,7 @@ footer {
                 <div class="education-content">
 
                     <div class="education-title">
-                        Diploma 2025–2026 · Computer Science & Engineering (CSE) 
+                        Diploma ·  2025–2026 · Computer Science & Engineering (CSE) 
                     </div>
 
                     <div class="education-meta">
@@ -1386,11 +1373,11 @@ footer {
                 <div class="education-content">
 
                     <div class="education-title">
-                        HSC · Digital Technology in Business (BTEB) 
+                        HSC · Digital Technology in Business · (BTEB) 
                     </div>
 
                     <div class="education-meta">
-                        Digital Technology in Business (BTEB) 
+                        Digital Technology in Business · (BTEB) 
                     </div>
 
                 </div>
@@ -1409,11 +1396,11 @@ footer {
                 <div class="education-content">
 
                     <div class="education-title">
-                        BSc · Business Administration
+                        BSc · Business Administration (UoL)
                     </div>
 
                     <div class="education-meta">
-                        University of London
+                        University of London · (UK) 
                     </div>
 
                 </div>
@@ -2223,4 +2210,4 @@ videoSeek.addEventListener(
 </script>
 
 </body>
-    </html>
+</html>
